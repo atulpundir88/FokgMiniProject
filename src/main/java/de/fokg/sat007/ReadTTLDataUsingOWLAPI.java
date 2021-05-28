@@ -68,6 +68,7 @@ public class ReadTTLDataUsingOWLAPI {
 				FileOutputStream fileOut = new FileOutputStream(file);
 				ArrayList<String> listIncludeResources = mapOfData.get(lpKey).get("<https://lpbenchgen.org/property/includesResource>");
 				for(String pos: listIncludeResources) {
+					pos= pos + "\n";
 					fileOut.write(pos.getBytes());
 				}
 				fileOut.close();
@@ -75,6 +76,7 @@ public class ReadTTLDataUsingOWLAPI {
 				FileOutputStream fileOut1 = new FileOutputStream(file1);
 				ArrayList<String> mapExcludeResources = mapOfData.get(lpKey).get("<https://lpbenchgen.org/property/excludesResource>");
 				for(String neg: mapExcludeResources) {
+					neg= neg + "\n";
 					fileOut1.write(neg.getBytes());
 				}
 				fileOut1.close();
