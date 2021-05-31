@@ -1,7 +1,7 @@
-http://dl-learner.org/carcinogenesis#bond3610
-http://dl-learner.org/carcinogenesis#bond1752
-http://dl-learner.org/carcinogenesis#bond3998
-http://dl-learner.org/carcinogenesis#bond4008
-http://dl-learner.org/carcinogenesis#bond3600
-http://dl-learner.org/carcinogenesis#bond2787
-http://dl-learner.org/carcinogenesis#bond4953
+bond1752
+bond2787
+bond3600
+bond3610
+bond3998
+bond4008
+bond4953
