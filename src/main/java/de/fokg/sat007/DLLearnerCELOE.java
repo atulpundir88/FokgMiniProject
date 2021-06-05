@@ -1,7 +1,9 @@
 package de.fokg.sat007;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 import org.dllearner.algorithms.celoe.CELOE;
@@ -12,8 +14,6 @@ import org.dllearner.learningproblems.PosNegLPStandard;
 import org.dllearner.reasoning.ClosedWorldReasoner;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLIndividual;
-
-import com.google.common.collect.Sets;
 
 import uk.ac.manchester.cs.owl.owlapi.OWLNamedIndividualImpl;
 
@@ -50,22 +50,29 @@ public class DLLearnerCELOE {
 		 */
 		PosNegLPStandard lp = new PosNegLPStandard(reasoner);
 		
-		File positiveFile = new File("lpfiles/lp_1_p.txt");
+		Scanner sc ;
+		HashSet<OWLIndividual> posExample = new HashSet<>();
+		HashSet<OWLIndividual> negExample = new HashSet<>();
+		try {
+			sc = new Scanner(new File("lpfiles/lp_1_p.txt"));
+			while(sc.hasNextLine()) {
+				String iri = sc.nextLine().replaceAll("\"kb:", "").replaceAll("\",", "");
+				posExample.add(new OWLNamedIndividualImpl(IRI.create(uriPrefix + iri)));
+			}
+			
+			sc = new Scanner(new File("lpfiles/lp_1_n.txt"));
+			while(sc.hasNextLine()) {
+				String iri = sc.nextLine().replaceAll("\"kb:", "").replaceAll("\",", "");
+				negExample.add(new OWLNamedIndividualImpl(IRI.create(uriPrefix + iri)));
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			throw new RuntimeException("Not able to read the file");
+		}
+		sc.close();
 		
-
-		HashSet<OWLIndividual> posExamples = Sets.newHashSet(
-				new OWLNamedIndividualImpl(IRI.create(uriPrefix + "stefan")),
-				new OWLNamedIndividualImpl(IRI.create(uriPrefix + "markus")),
-				new OWLNamedIndividualImpl(IRI.create(uriPrefix + "martin"))
-		);
-		lp.setPositiveExamples(posExamples);
-
-		HashSet<OWLIndividual> negExamples = Sets.newHashSet(
-				new OWLNamedIndividualImpl(IRI.create(uriPrefix + "heinz")),
-				new OWLNamedIndividualImpl(IRI.create(uriPrefix + "anna")),
-				new OWLNamedIndividualImpl(IRI.create(uriPrefix + "michelle"))
-		);
-		lp.setNegativeExamples(negExamples);
+		lp.setPositiveExamples(posExample);
+		lp.setNegativeExamples(negExample);
 
 		lp.init();
 
