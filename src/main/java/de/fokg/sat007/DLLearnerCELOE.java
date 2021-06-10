@@ -18,21 +18,21 @@ import org.semanticweb.owlapi.model.OWLIndividual;
 import uk.ac.manchester.cs.owl.owlapi.OWLNamedIndividualImpl;
 
 public class DLLearnerCELOE {
-	//static File familyExamplesDir = new File("../examples");
+	// static File familyExamplesDir = new File("../examples");
 	static String uriPrefix = "http://dl-learner.org/carcinogenesis#";
 
 	public static void main(String[] args) throws ComponentInitException {
-		/* Define the knowledge source
-		 * > ks.type = "OWL File"
-		 * > ks.fileName = "father.owl"
+		/*
+		 * Define the knowledge source > ks.type = "OWL File" > ks.fileName =
+		 * "father.owl"
 		 */
 		OWLFile ks = new OWLFile();
-		ks.setFileName( "carcinogenesis.owl");
+		ks.setFileName("carcinogenesis.owl");
 		ks.init();
 
-		/* Set up the reasoner
-		 * > reasoner.type = "closed world reasoner"
-		 * > reasoner.sources = { ks }
+		/*
+		 * Set up the reasoner > reasoner.type = "closed world reasoner" >
+		 * reasoner.sources = { ks }
 		 */
 		ClosedWorldReasoner reasoner = new ClosedWorldReasoner();
 
@@ -43,45 +43,49 @@ public class DLLearnerCELOE {
 		reasoner.setSources(sources);
 		reasoner.init();
 
-		/* Set up the learning problem
-		 * > lp.type = "posNegStandard"
-		 * > lp.positiveExamples = { "ex:stefan", "ex:markus", "ex:martin" }
-		 * > lp.negativeExamples = { "ex:heinz", "ex:anna", "ex:michelle" }
+		/*
+		 * Set up the learning problem > lp.type = "posNegStandard" >
+		 * lp.positiveExamples = { "ex:stefan", "ex:markus", "ex:martin" } >
+		 * lp.negativeExamples = { "ex:heinz", "ex:anna", "ex:michelle" }
 		 */
 		PosNegLPStandard lp = new PosNegLPStandard(reasoner);
-		
-		Scanner sc ;
+
+		Scanner sc = null;
 		HashSet<OWLIndividual> posExample = new HashSet<>();
 		HashSet<OWLIndividual> negExample = new HashSet<>();
 		try {
-			sc = new Scanner(new File("lpfiles/lp_1_p.txt"));
-			while(sc.hasNextLine()) {
-				String iri = sc.nextLine().replaceAll("\"kb:", "").replaceAll("\",", "");
-				posExample.add(new OWLNamedIndividualImpl(IRI.create(uriPrefix + iri)));
+			for (int i = 1; i <= 25; i++) {
+				sc = new Scanner(new File("lpfiles/lp_" + i + "_p.txt")); // lp_1_p.txt => i=1
+				while (sc.hasNextLine()) {
+					String iri = sc.nextLine().replaceAll("\"kb:", "").replaceAll("\",", "");
+					posExample.add(new OWLNamedIndividualImpl(IRI.create(uriPrefix + iri)));
+				}
 			}
-			
-			sc = new Scanner(new File("lpfiles/lp_1_n.txt"));
-			while(sc.hasNextLine()) {
-				String iri = sc.nextLine().replaceAll("\"kb:", "").replaceAll("\",", "");
-				negExample.add(new OWLNamedIndividualImpl(IRI.create(uriPrefix + iri)));
+
+			for (int i = 1; i <= 25; i++) {
+				sc = new Scanner(new File("lpfiles/lp_"+i+"_n.txt"));
+				while (sc.hasNextLine()) {
+					String iri = sc.nextLine().replaceAll("\"kb:", "").replaceAll("\",", "");
+					negExample.add(new OWLNamedIndividualImpl(IRI.create(uriPrefix + iri)));
+				}
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			throw new RuntimeException("Not able to read the file");
 		}
 		sc.close();
-		
+
 		lp.setPositiveExamples(posExample);
 		lp.setNegativeExamples(negExample);
 
 		lp.init();
 
-		/* Set up the learning algorithm
-		 * > alg.type = "celoe"
-		 * > alg.maxExecutionTimeInSeconds = 1
+		/*
+		 * Set up the learning algorithm > alg.type = "celoe" >
+		 * alg.maxExecutionTimeInSeconds = 1
 		 */
 		CELOE alg = new CELOE();
-		alg.setMaxExecutionTimeInSeconds(1);
+		alg.setMaxExecutionTimeInSeconds(3600);
 
 		// This 'wiring' is not part of the configuration file since it is
 		// done automatically when using bin/cli. However it has to be done explicitly,
