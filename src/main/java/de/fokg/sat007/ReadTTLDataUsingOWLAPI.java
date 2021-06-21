@@ -31,7 +31,8 @@ public class ReadTTLDataUsingOWLAPI {
 	public static void main(String[] args) throws OWLOntologyCreationException {
 		
 		OWLOntologyManager m = OWLManager.createOWLOntologyManager();
-		OWLOntology o = m.loadOntologyFromOntologyDocument(new File("kg-mini-project-train.ttl")); // Load file
+		OWLOntology o = m.loadOntologyFromOntologyDocument(new File("kg-mini-project-train_old.ttl")); // Load file
+		// kg-mini-project-train.ttl.txt   kg-mini-project-train.ttl
 		OWLDataFactory df = OWLManager.getOWLDataFactory();
 		
 		// Get data in Hash Map
@@ -69,7 +70,7 @@ public class ReadTTLDataUsingOWLAPI {
 				FileOutputStream fileOut = new FileOutputStream(file);
 				TreeSet<String> listIncludeResources = mapOfData.get(lpKey).get("<https://lpbenchgen.org/property/includesResource>");
 				for(String pos: listIncludeResources) {
-					pos= pos.replaceAll("http://dl-learner.org/carcinogenesis#", "")  + "\n";
+					pos= pos.replaceAll("http://dl-learner.org/carcinogenesis#", "\"kb:")  + "\"," + "\n";
 					fileOut.write(pos.getBytes());
 				}
 				fileOut.close();
@@ -77,7 +78,7 @@ public class ReadTTLDataUsingOWLAPI {
 				FileOutputStream fileOut1 = new FileOutputStream(file1);
 				TreeSet<String> mapExcludeResources = mapOfData.get(lpKey).get("<https://lpbenchgen.org/property/excludesResource>");
 				for(String neg: mapExcludeResources) {
-					neg= neg.replaceAll("http://dl-learner.org/carcinogenesis#", "") + "\n";
+					neg= neg.replaceAll("http://dl-learner.org/carcinogenesis#", "\"kb:")  + "\"," +"\n";
 					fileOut1.write(neg.getBytes());
 				}
 				fileOut1.close();
