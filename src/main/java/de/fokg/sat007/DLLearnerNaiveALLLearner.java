@@ -9,8 +9,7 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.SortedSet;
 
-//import org.apache.commons.compress.archivers.sevenz.CLI;
-import org.dllearner.algorithms.celoe.CELOE;
+import org.dllearner.algorithms.NaiveALLearner;
 import org.dllearner.core.ComponentInitException;
 import org.dllearner.core.KnowledgeSource;
 import org.dllearner.core.owl.fuzzydll.FuzzyIndividual;
@@ -29,7 +28,7 @@ import org.semanticweb.owlapi.model.OWLOntologyManager;
 //import edu.berkeley.compbio.jlibsvm.regression.RegressionCrossValidationResults;
 import uk.ac.manchester.cs.owl.owlapi.OWLNamedIndividualImpl;
 
-public class DLLearnerCELOE {
+public class DLLearnerNaiveALLLearner {
 	// static File familyExamplesDir = new File("../examples");
 	static String uriPrefix = "http://dl-learner.org/carcinogenesis#";
 
@@ -97,7 +96,8 @@ public class DLLearnerCELOE {
 		 * Set up the learning algorithm > alg.type = "celoe" >
 		 * alg.maxExecutionTimeInSeconds = 1
 		 */
-		CELOE alg = new CELOE();
+		//CELOE alg = new CELOE();
+		NaiveALLearner alg = new NaiveALLearner(lp, reasoner);
 		alg.setMaxExecutionTimeInSeconds(120);
 
 		// This 'wiring' is not part of the configuration file since it is
@@ -105,13 +105,13 @@ public class DLLearnerCELOE {
 		// here.
 		alg.setLearningProblem(lp);
 		alg.setReasoner(reasoner);
-		
+		alg.setMaxLength(4);
 		//alg.setWriteSearchTree(true);
 		//alg.setSearchTreeFile("output.txt");
 		//alg.setReplaceSearchTree(true);
 		//alg.setExpandAccuracy100Nodes(true);
 		
-		alg.setNoisePercentage(30);
+		//alg.setNoisePercentage(30);
 		
 		//Try different heuristic
 		//OEHeuristicRuntime oeHeuristic = new OEHeuristicRuntime();
@@ -134,13 +134,13 @@ public class DLLearnerCELOE {
 		OWLClass compoundClass = df.getOWLClass(IRI.create(ontologyIRI + "#Compound"));*/
 		
 		
-		alg.setStartClass(compoundClass);
+		//alg.setStartClass(compoundClass);
 
 		alg.start();
 
-		System.out.println("Start class () : " + alg.getStartClass());
-		int classExpressionTests = alg.getClassExpressionTests();
-		System.out.println(classExpressionTests);
+		//System.out.println("Start class () : " + alg.getStartClass());
+		//int classExpressionTests = alg.getClassExpressionTests();
+		//System.out.println(classExpressionTests);
 		OWLClassExpression currentlyBestDescription = alg.getCurrentlyBestDescription();
 		System.out.println("Best Class Exp : " + currentlyBestDescription.toString());
 		List<OWLClassExpression> currentlyBestDescriptions = alg.getCurrentlyBestDescriptions();

@@ -118,7 +118,7 @@ public class ReadTTLDataUsingOWLAPI {
 	private static HashMap<String, HashMap<String, ArrayList<String>>> readData(OWLOntology o, OWLDataFactory df) {
 		
 		// Initialize Map
-		HashMap<String, HashMap<String, ArrayList<String>>> mapOfData = new HashMap<>();
+		final HashMap<String, HashMap<String, ArrayList<String>>> mapOfData = new HashMap<>();
 		
 		// Code for class
 		/*OWLClass clas = null;
