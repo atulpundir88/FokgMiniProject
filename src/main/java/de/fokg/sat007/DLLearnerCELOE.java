@@ -2,6 +2,8 @@ package de.fokg.sat007;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -14,9 +16,13 @@ import org.dllearner.algorithms.celoe.CELOE;
 import org.dllearner.core.ComponentInitException;
 import org.dllearner.core.KnowledgeSource;
 import org.dllearner.core.owl.fuzzydll.FuzzyIndividual;
+import org.dllearner.experiments.ExMakerCrossFolds;
+import org.dllearner.experiments.Examples;
 import org.dllearner.kb.OWLFile;
 import org.dllearner.learningproblems.PosNegLPStandard;
+import org.dllearner.learningproblems.PosNegUndLP;
 import org.dllearner.reasoning.ClosedWorldReasoner;
+import org.dllearner.utilities.examples.ExamplesProvider;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClassExpression;
@@ -61,13 +67,13 @@ public class DLLearnerCELOE {
 		 * lp.positiveExamples = { "ex:stefan", "ex:markus", "ex:martin" } >
 		 * lp.negativeExamples = { "ex:heinz", "ex:anna", "ex:michelle" }
 		 */
-		PosNegLPStandard lp = new PosNegLPStandard(reasoner);
+		
 
 		Scanner sc = null;
 		HashSet<OWLIndividual> posExample = new HashSet<>();
 		HashSet<OWLIndividual> negExample = new HashSet<>();
 		try {
-			for (int i = 1; i <= 20; i++) {
+			for (int i = 1; i <= 25; i++) {
 				sc = new Scanner(new File("lpfiles/lp_" + i + "_p.txt")); // lp_1_p.txt => i=1
 				while (sc.hasNextLine()) {
 					String iri = sc.nextLine().replaceAll("\"kb:", "").replaceAll("\",", "");
@@ -75,7 +81,7 @@ public class DLLearnerCELOE {
 				}
 			}
 
-			for (int i = 1; i <= 20; i++) {
+			for (int i = 1; i <= 25; i++) {
 				sc = new Scanner(new File("lpfiles/lp_" + i + "_n.txt"));
 				while (sc.hasNextLine()) {
 					String iri = sc.nextLine().replaceAll("\"kb:", "").replaceAll("\",", "");
@@ -87,72 +93,127 @@ public class DLLearnerCELOE {
 			throw new RuntimeException("Not able to read the file");
 		}
 		sc.close();
-
-		lp.setPositiveExamples(posExample);
-		lp.setNegativeExamples(negExample);
-
-		lp.init();
-
-		/*
-		 * Set up the learning algorithm > alg.type = "celoe" >
-		 * alg.maxExecutionTimeInSeconds = 1
-		 */
-		CELOE alg = new CELOE();
-		alg.setMaxExecutionTimeInSeconds(120);
-
-		// This 'wiring' is not part of the configuration file since it is
-		// done automatically when using bin/cli. However it has to be done explicitly,
-		// here.
-		alg.setLearningProblem(lp);
-		alg.setReasoner(reasoner);
 		
-		//alg.setWriteSearchTree(true);
-		//alg.setSearchTreeFile("output.txt");
-		//alg.setReplaceSearchTree(true);
-		//alg.setExpandAccuracy100Nodes(true);
-		
-		alg.setNoisePercentage(30);
-		
-		//Try different heuristic
-		//OEHeuristicRuntime oeHeuristic = new OEHeuristicRuntime();
-		//alg.setHeuristic(oeHeuristic);
-
-		
-		//alg.setSingleSuggestionMode(true);
-		
-		
-
-		alg.init();
-
-		
-		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
-		OWLDataFactory df = manager.getOWLDataFactory();
-		OWLClassExpression compoundClass = df.getOWLThing();
-		
-		/*// Change start class
-		IRI ontologyIRI = IRI.create("http://dl-learner.org/carcinogenesis");
-		OWLClass compoundClass = df.getOWLClass(IRI.create(ontologyIRI + "#Compound"));*/
-		
-		
-		alg.setStartClass(compoundClass);
-
-		alg.start();
-
-		System.out.println("Start class () : " + alg.getStartClass());
-		int classExpressionTests = alg.getClassExpressionTests();
-		System.out.println(classExpressionTests);
-		OWLClassExpression currentlyBestDescription = alg.getCurrentlyBestDescription();
-		System.out.println("Best Class Exp : " + currentlyBestDescription.toString());
-		List<OWLClassExpression> currentlyBestDescriptions = alg.getCurrentlyBestDescriptions();
-		System.out.println("Different class Exp : ");
-		for (OWLClassExpression expression : currentlyBestDescriptions) {
-			System.out.println("Class Exp  : " + expression.toString());
+		//Creating positive and negative examples
+		Examples examples = new Examples();
+		Set<String> negTemp = new HashSet<>();
+		for (OWLIndividual negElement : negExample) {
+			negTemp.add(negElement.toStringID());
 		}
+		
+		Set<String> posTemp = new HashSet<>();
+		for (OWLIndividual posElement : posExample) {
+			posTemp.add(posElement.toStringID());
+		}
+		
+		
+		
+		for(String posElement: posTemp) {
+			if(negTemp.contains(posElement)) {
+				negTemp.remove(posElement);
+			}
+		}
+		
+		List<Object> asList = Arrays.asList(negTemp.toArray());
+		Set<String> negTrain = new HashSet<>();
+		if(posTemp.size()< negTemp.size()) {
+			for(int i=0; i < posTemp.size(); i++) {
+				negTrain.add((String) asList.get(i));
+			}
+		}
+		
+		examples.addNegTrain(negTrain);
+		examples.addPosTrain(posTemp);
+		
+		// Using cross Folds
+		ExMakerCrossFolds crossFolds = new ExMakerCrossFolds(examples);
+		List<Examples> splitLeaveOneOut = crossFolds.splitLeaveOneOut(10);
+		
+		HashSet<OWLIndividual> posExampleCrossFolds = new HashSet<>();
+		HashSet<OWLIndividual> negExampleCrossFolds = new HashSet<>();
+		
+		int index = 1;
+		for(Examples crossdata : splitLeaveOneOut) {
+			System.out.println("Cross Fold : " + index);
+			SortedSet<String> positiveExamples = crossdata.getPositiveExamples();
+			for(String positiveData : positiveExamples) {
+				posExampleCrossFolds.add(new OWLNamedIndividualImpl(IRI.create(positiveData)));
+			}
+			
+			SortedSet<String> negativeExamples = crossdata.getNegativeExamples();
+			for(String negativeData : negativeExamples) {
+				negExampleCrossFolds.add(new OWLNamedIndividualImpl(IRI.create(negativeData)));
+			}
+			
+			PosNegLPStandard lp = new PosNegLPStandard(reasoner);
+			lp.setPositiveExamples(posExample);
+			lp.setNegativeExamples(negExample);
 
-		// not Carbon
+			lp.init();
+			/*
+			 * Set up the learning algorithm > alg.type = "celoe" >
+			 * alg.maxExecutionTimeInSeconds = 1
+			 */
+			CELOE alg = new CELOE();
+			alg.setMaxExecutionTimeInSeconds(60);
 
-		// checkTestData(currentlyBestDescription, reasoner);
+			// This 'wiring' is not part of the configuration file since it is
+			// done automatically when using bin/cli. However it has to be done explicitly,
+			// here.
+			alg.setLearningProblem(lp);
+			alg.setReasoner(reasoner);
+			
+			//alg.setWriteSearchTree(true);
+			//alg.setSearchTreeFile("output.txt");
+			//alg.setReplaceSearchTree(true);
+			//alg.setExpandAccuracy100Nodes(true);
+			
+			alg.setNoisePercentage(30);
+			
+			//Try different heuristic
+			//OEHeuristicRuntime oeHeuristic = new OEHeuristicRuntime();
+			//alg.setHeuristic(oeHeuristic);
 
+			
+			//alg.setSingleSuggestionMode(true);
+
+			alg.init();
+
+			
+			OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+			OWLDataFactory df = manager.getOWLDataFactory();
+			OWLClassExpression compoundClass = df.getOWLThing();
+			
+			/*// Change start class
+			IRI ontologyIRI = IRI.create("http://dl-learner.org/carcinogenesis");
+			OWLClass compoundClass = df.getOWLClass(IRI.create(ontologyIRI + "#Compound"));*/
+			
+			
+			alg.setStartClass(compoundClass);
+
+			alg.start();
+
+			System.out.println("Start class () : " + alg.getStartClass());
+			int classExpressionTests = alg.getClassExpressionTests();
+			System.out.println(classExpressionTests);
+			OWLClassExpression currentlyBestDescription = alg.getCurrentlyBestDescription();
+			System.out.println("Best Class Exp : " + currentlyBestDescription.toString());
+			List<OWLClassExpression> currentlyBestDescriptions = alg.getCurrentlyBestDescriptions();
+			System.out.println("Different class Exp : ");
+			for (OWLClassExpression expression : currentlyBestDescriptions) {
+				System.out.println("Class Exp  : " + expression.toString());
+			}
+
+			// not Carbon
+
+			// checkTestData(currentlyBestDescription, reasoner);
+			System.out.println("---End--");
+			index++;
+			
+		}
+		
+
+		
 		System.out.println();
 	}
 
