@@ -105,7 +105,7 @@ public class DLLearnerCELOE {
 			alg.setLearningProblem(lp);
 			alg.setReasoner(reasoner);
 			alg.init();
-			// alg.setNoisePercentage(30);
+			// alg.setNoisePercentage(30); 
 			alg.start();
 
 			OWLClassExpression currentlyBestDescription = alg.getCurrentlyBestDescription();
