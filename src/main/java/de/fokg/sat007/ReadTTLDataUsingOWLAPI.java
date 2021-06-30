@@ -31,18 +31,82 @@ public class ReadTTLDataUsingOWLAPI {
 		
 		OWLOntologyManager m = OWLManager.createOWLOntologyManager();
 		OWLOntology o = m.loadOntologyFromOntologyDocument(new File("kg-mini-project-train_v2.ttl.txt")); 
+		OWLOntology oTest = m.loadOntologyFromOntologyDocument(new File("kg-mini-project-grading.ttl.txt"));
 		// Load file MiniProject.ttl kg-mini-project-train.ttl
 		OWLDataFactory df = OWLManager.getOWLDataFactory();
 		
 		// Get data in Hash Map
 		HashMap<String, HashMap<String, ArrayList<String>>> mapOfData =	readData(o, df);
 		System.out.println("Size of Map : " + mapOfData.size());
+		
+		//Get test data (grading data) in Map
+		HashMap<String, HashMap<String, ArrayList<String>>> mapOfDataTest = readData(oTest, df);
+		System.out.println("Size of Map : " + mapOfDataTest.size());
 
 		//Create files as per data in HashMap
 		deleteOldFiles(mapOfData);//Delete old files if any
 		createNewFiles(mapOfData);
 		
+		
+		//Create files as per test data(Grading data) in Map
+		deleteOldFiles(mapOfDataTest);//Delete old files if any
+		createNewFilesTest(mapOfDataTest); 
 	}
+	
+	
+	/**
+	 * @param mapOfData
+	 */
+	private static void createNewFilesTest(HashMap<String, HashMap<String, ArrayList<String>>> mapOfData) {
+		Set<String> lpKeys = mapOfData.keySet();//Get Learning Problem Keys
+		for(String lpKey: lpKeys ) {
+			String fileName = lpKey.replaceAll("https://lpbenchgen.org/resource/", "");
+			
+			//Create positive and negative files for each learning problem
+			File file = new File("lpfiles/grading/" + fileName + "_p.txt");
+			File file1 = new File("lpfiles/grading/" + fileName + "_n.txt");
+			
+			try {
+				file.createNewFile();
+				file1.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+				throw new RuntimeException("Issue while creating a file");
+			}
+			
+			try {
+				//Write data for positive samples
+				FileOutputStream fileOut = new FileOutputStream(file);
+				ArrayList<String> listIncludeResources = mapOfData.get(lpKey).get("<https://lpbenchgen.org/property/includesResource>");
+				for(String pos: listIncludeResources) {
+					pos= pos.replaceAll("http://dl-learner.org/carcinogenesis#", "\"kb:")  + "\"," + "\n";
+					//pos= pos + "\n";
+					fileOut.write(pos.getBytes());
+				}
+				fileOut.close();
+
+				FileOutputStream fileOut1 = new FileOutputStream(file1);
+				ArrayList<String> mapExcludeResources = mapOfData.get(lpKey).get("<https://lpbenchgen.org/property/excludesResource>");
+				for(String neg: mapExcludeResources) {
+					//neg= neg + "\n";
+					neg= neg.replaceAll("http://dl-learner.org/carcinogenesis#", "\"kb:")  + "\"," +"\n";
+					fileOut1.write(neg.getBytes());
+				}
+				fileOut1.close();
+				
+				
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+				throw new RuntimeException("Issue in finding the new file!");
+			} catch (IOException e) {
+				e.printStackTrace();
+				throw new RuntimeException("Issue when writing in the new file!");
+			}
+
+		}
+	}
+
+	
 	
 	/**
 	 * @param mapOfData
