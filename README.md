@@ -1,25 +1,30 @@
-# FokgMiniProject
+# Classifying data using CELOE
 
-# Step 1 (Done)
-class : ReadTTLDataUsingOWLAPI
-1. Parses training file
+# The project consists of following steps:
+Step 1: Read data from TTL file and generate lp files for positive and negative examples using class : ReadTTLDataUsingOWLAPI
+1. Parses training file & grading file.
 2. Gets include and exclude resources for each learning problem.
-3. Stores this resources in directory lpfiles/<learning_problem>_<positive_negative>.txt
+3. Stores this resources in directory lpfiles/train/<learning_problem>_<positive_negative>.txt(for train data) or lpfiles/grade/<learning_problem>_<positive_negative>.txt(for grading data)
 
-# Step 2 (Need to start)
-Have tried to train the model for first 20 LPs, getting following F1-score:
-CELOE Algorithm => 49%
-OCEL Algorithm => 44%
-Note: This is F1-score for first 20 LPs.
+Step 2: Classify data using CELOE and generate output file using class : DLLearnerCELOE
+1. Initializes CELOE algorithm.
+2. Gets data for individual LPs from lp files generated in step 1.
+3. Classify data using CELOE.
+4. Generate output file.
 
-We need to work on following task.
-1) Cross Validation. (Create a logic to divide training data and use this different combination of data to train the model)
-2) Trying different parameters for CELOE & OCEL. (Like changing Noise Percentage, negative weight, etc. )
-3) Validate Test data against the class expression(Note we will get this class expression from training data).
-4) Using different learning problem classes like PosNegUndLP, etc. (This classes are present under https://github.com/SmartDataAnalytics/DL-Learner/blob/89e6380cd14921ba86205a1437857744fe896c4d/components-core/src/main/java/org/dllearner/learningproblems/)
+# Execution:
 
-Note : 
-I have tried below changes :
-1) Using Refinement operators like PSI-up, PSI-down, ELDown. Getting error when Refine method is invoked. It is not defiend for this operators.
-2) Used PCELOE instead of CELOE, getting ConcurrentModification exception message. It is trying to execute the flow in parallel.
-3) NaiveALLearner algorithm => with expression length of 4 (Taking a lot of time)
+Step 1: Check parameters in properties file. (These parameters are already specified for training and grading data)
+Following parameters are specified in the config.properties file:
+1.  "fokg.train.filename" - file name containing training data.
+2.  "fokg.train.filepath" - file path for generating LP files.
+3.  "fokg.train.startlpnumber" - first lp number for training data.
+4.  "fokg.train.totallps" - total number of LPs for training data.
+5.  "fokg.train.execute" - flag to execute algorithm for training data.
+6.  "fokg.train.output.filedetail" - output file path for training data.
+
+Similar parameters exists for grading data : fokg.grade.filename, fokg.grade.filepath, fokg.grade.startlpnumber, fokg.grade.totallps, fokg.grade.output.filedetail
+
+Step 2: Execute ReadTTLDataUsingOWLAPI.java class. This class will generate the LP files for training data under lpfiles/train path and for grading data under lpfiles/grade path.
+
+Step 3: Execute DLLearnerCELOE.java class. This class will invoke CELOE algorithm for each lp of training(if fokg.train.execute flag is true) and grading data. After the execution is completed, output file will be created under output directory.

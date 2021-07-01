@@ -1,0 +1,650 @@
+best node: (not (Atom)) and (not (Bond-7))(accuracy: 0.5958402020272877)
+all expanded nodes:
+   (Bond-1 or Structure) and (not (Carbon-10))
+   (Bond-1 or Structure) and (not (Carbon-14))
+   (Bond-1 or Structure) and (not (Carbon-15))
+   (Bond-1 or Structure) and (not (Carbon-16))
+   (Bond-1 or Structure) and (not (Carbon-17))
+   (Bond-1 or Structure) and (not (Carbon-19))
+   (Bond-1 or Structure) and (not (Carbon-191))
+   (Bond-1 or Structure) and (not (Carbon-192))
+   (Bond-1 or Structure) and (not (Carbon-193))
+   (Bond-1 or Structure) and (not (Carbon-21))
+   (Bond-1 or Structure) and (not (Carbon-22))
+   (Bond-1 or Structure) and (not (Carbon-232))
+   (Bond-1 or Structure) and (not (Carbon-26))
+   (Bond-1 or Structure) and (not (Carbon-27))
+   (Bond-1 or Structure) and (not (Carbon-29))
+   (Bond-1 or Structure) and (not (Chlorine-93))
+   (Bond-1 or Structure) and (not (Compound))
+   (Bond-1 or Structure) and (not (Copper-96))
+   (Bond-1 or Structure) and (not (Cyanate))
+   (Bond-1 or Structure) and (not (Di10))
+   (Bond-1 or Structure) and (not (Di227))
+   (Bond-1 or Structure) and (not (Di23))
+   (Bond-1 or Structure) and (not (Di232))
+   (Bond-1 or Structure) and (not (Di260))
+   (Bond-1 or Structure) and (not (Di281))
+   (Bond-1 or Structure) and (not (Di48))
+   (Bond-1 or Structure) and (not (Di51))
+   (Bond-1 or Structure) and (not (Di64))
+   (Bond-1 or Structure) and (not (Di66))
+   (Bond-1 or Structure) and (not (Di67a))
+   (Bond-1 or Structure) and (not (Di8))
+   (Bond-1 or Structure) and (not (Ester))
+   (Bond-1 or Structure) and (not (Ether))
+   (Bond-1 or Structure) and (not (Ethoxy))
+   (Bond-1 or Structure) and (not (Five_ring))
+   (Bond-1 or Structure) and (not (Fluorine-92))
+   (Bond-1 or Structure) and (not (Gallium))
+   (Bond-1 or Structure) and (not (Halide10))
+   (Bond-1 or Structure) and (not (Hydrogen-1))
+   (Bond-1 or Structure) and (not (Hydrogen-2))
+   (Bond-1 or Structure) and (not (Hydrogen-3))
+   (Bond-1 or Structure) and (not (Hydrogen-8))
+   (Bond-1 or Structure) and (not (Imine))
+   (Bond-1 or Structure) and (not (Iodine-95))
+   (Bond-1 or Structure) and (not (Ketone))
+   (Bond-1 or Structure) and (not (Krypton-83))
+   (Bond-1 or Structure) and (not (Lead-121))
+   (Bond-1 or Structure) and (not (Manganese-85))
+   (Bond-1 or Structure) and (not (Mercury-120))
+   (Bond-1 or Structure) and (not (Methanol))
+   (Bond-1 or Structure) and (not (Methoxy))
+   (Bond-1 or Structure) and (not (Methyl))
+   (Bond-1 or Structure) and (not (Molybdenum))
+   (Bond-1 or Structure) and (not (Nitro))
+   (Bond-1 or Structure) and (not (Nitrogen-31))
+   (Bond-1 or Structure) and (not (Nitrogen-32))
+   (Bond-1 or Structure) and (not (Nitrogen-33))
+   (Bond-1 or Structure) and (not (Nitrogen-34))
+   (Bond-1 or Structure) and (not (Nitrogen-35))
+   (Bond-1 or Structure) and (not (Nitrogen-36))
+   (Bond-1 or Structure) and (not (Nitrogen-37))
+   (Bond-1 or Structure) and (not (Nitrogen-38))
+   (Bond-1 or Structure) and (not (Nitrogen-499))
+   (Bond-1 or Structure) and (not (Non_ar_5c_ring))
+   (Bond-1 or Structure) and (not (Non_ar_6c_ring))
+   (Bond-1 or Structure) and (not (Non_ar_hetero_5_ring))
+   (Bond-1 or Structure) and (not (Non_ar_hetero_6_ring))
+   (Bond-1 or Structure) and (not (Oxygen-40))
+   (Bond-1 or Structure) and (not (Oxygen-41))
+   (Bond-1 or Structure) and (not (Oxygen-42))
+   (Bond-1 or Structure) and (not (Oxygen-45))
+   (Bond-1 or Structure) and (not (Oxygen-49))
+   (Bond-1 or Structure) and (not (Oxygen-50))
+   (Bond-1 or Structure) and (not (Oxygen-51))
+   (Bond-1 or Structure) and (not (Oxygen-52))
+   (Bond-1 or Structure) and (not (Oxygen-53))
+   (Bond-1 or Structure) and (not (Phenol))
+   (Bond-1 or Structure) and (not (Phosphorus-60))
+   (Bond-1 or Structure) and (not (Phosphorus-61))
+   (Bond-1 or Structure) and (not (Phosphorus-62))
+   (Bond-1 or Structure) and (not (Ring_size_4))
+   (Bond-1 or Structure) and (not (Selenium-102))
+   (Bond-1 or Structure) and (not (Six_ring))
+   (Bond-1 or Structure) and (not (Sodium-81))
+   (Bond-1 or Structure) and (not (Sulfide))
+   (Bond-1 or Structure) and (not (Sulfo))
+   (Bond-1 or Structure) and (not (Sulfur-70))
+   (Bond-1 or Structure) and (not (Sulfur-72))
+   (Bond-1 or Structure) and (not (Sulfur-74))
+   (Bond-1 or Structure) and (not (Sulfur-75))
+   (Bond-1 or Structure) and (not (Sulfur-76))
+   (Bond-1 or Structure) and (not (Sulfur-77))
+   (Bond-1 or Structure) and (not (Sulfur-78))
+   (Bond-1 or Structure) and (not (Sulfur-79))
+   (Bond-1 or Structure) and (not (Tellurium-129))
+   (Bond-1 or Structure) and (not (Tin-113))
+   (Bond-1 or Structure) and (not (Titanium-134))
+   (Bond-1 or Structure) and (not (Vanadium))
+   (Bond-1 or Structure) and (not (Zinc-87))
+   Alcohol or Bond-1
+   Amine or Bond-1
+   Amino or Bond-1
+   Bond-1 or Cyanate
+   Bond-1 or Di
+   Bond-1 or Ester
+   Bond-1 or Ether
+   Bond-1 or Ethoxy
+   Bond-1 or Halide
+   Bond-1 or Imine
+   Bond-1 or Ketone
+   Bond-1 or Methanol
+   Bond-1 or Methoxy
+   Bond-1 or Methyl
+   Bond-1 or Nitro
+   Bond-1 or Phenol
+   Bond-1 or Ring
+   Bond-1 or Sulfide
+   Bond-1 or Sulfo
+   Bond-1 or (Structure and Structure)
+   Bond-1 or (Structure and (not (Alcohol)))
+   Bond-1 or (Structure and (not (Alkyl_halide)))
+   Bond-1 or (Structure and (not (Amine)))
+   Bond-1 or (Structure and (not (Amino)))
+   Bond-1 or (Structure and (not (Ar_halide)))
+   Bond-1 or (Structure and (not (Arsenic-101)))
+   Bond-1 or (Structure and (not (Barium-115)))
+   Bond-1 or (Structure and (not (Bond-1)))
+   Bond-1 or (Structure and (not (Bond-2)))
+   Bond-1 or (Structure and (not (Bond-3)))
+   Bond-1 or (Structure and (not (Bond-7)))
+   Bond-1 or (Structure and (not (Bromine-94)))
+   Bond-1 or (Structure and (not (Calcium-84)))
+   Bond-1 or (Structure and (not (Carbon-10)))
+   Bond-1 or (Structure and (not (Carbon-14)))
+   Bond-1 or (Structure and (not (Carbon-15)))
+   Bond-1 or (Structure and (not (Carbon-16)))
+   Bond-1 or (Structure and (not (Carbon-17)))
+   Bond-1 or (Structure and (not (Carbon-19)))
+   Bond-1 or (Structure and (not (Carbon-191)))
+   Bond-1 or (Structure and (not (Carbon-192)))
+   Bond-1 or (Structure and (not (Carbon-193)))
+   Bond-1 or (Structure and (not (Carbon-21)))
+   Bond-1 or (Structure and (not (Carbon-22)))
+   Bond-1 or (Structure and (not (Carbon-232)))
+   Bond-1 or (Structure and (not (Carbon-26)))
+   Bond-1 or (Structure and (not (Carbon-27)))
+   Bond-1 or (Structure and (not (Carbon-29)))
+   Bond-1 or (Structure and (not (Chlorine-93)))
+   Bond-1 or (Structure and (not (Compound)))
+   Bond-1 or (Structure and (not (Copper-96)))
+   Bond-1 or (Structure and (not (Cyanate)))
+   Bond-1 or (Structure and (not (Di10)))
+   Bond-1 or (Structure and (not (Di227)))
+   Bond-1 or (Structure and (not (Di23)))
+   Bond-1 or (Structure and (not (Di232)))
+   Bond-1 or (Structure and (not (Di260)))
+   Bond-1 or (Structure and (not (Di281)))
+   Bond-1 or (Structure and (not (Di48)))
+   Bond-1 or (Structure and (not (Di51)))
+   Bond-1 or (Structure and (not (Di64)))
+   Bond-1 or (Structure and (not (Di66)))
+   Bond-1 or (Structure and (not (Di67a)))
+   Bond-1 or (Structure and (not (Di8)))
+   Bond-1 or (Structure and (not (Ester)))
+   Bond-1 or (Structure and (not (Ether)))
+   Bond-1 or (Structure and (not (Ethoxy)))
+   Bond-1 or (Structure and (not (Five_ring)))
+   Bond-1 or (Structure and (not (Fluorine-92)))
+   Bond-1 or (Structure and (not (Gallium)))
+   Bond-1 or (Structure and (not (Halide10)))
+   Bond-1 or (Structure and (not (Hydrogen-1)))
+   Bond-1 or (Structure and (not (Hydrogen-2)))
+   Bond-1 or (Structure and (not (Hydrogen-3)))
+   Bond-1 or (Structure and (not (Hydrogen-8)))
+   Bond-1 or (Structure and (not (Imine)))
+   Bond-1 or (Structure and (not (Iodine-95)))
+   Bond-1 or (Structure and (not (Ketone)))
+   Bond-1 or (Structure and (not (Krypton-83)))
+   Bond-1 or (Structure and (not (Lead-121)))
+   Bond-1 or (Structure and (not (Manganese-85)))
+   Bond-1 or (Structure and (not (Mercury-120)))
+   Bond-1 or (Structure and (not (Methanol)))
+   Bond-1 or (Structure and (not (Methoxy)))
+   Bond-1 or (Structure and (not (Methyl)))
+   Bond-1 or (Structure and (not (Molybdenum)))
+   Bond-1 or (Structure and (not (Nitro)))
+   Bond-1 or (Structure and (not (Nitrogen-31)))
+   Bond-1 or (Structure and (not (Nitrogen-32)))
+   Bond-1 or (Structure and (not (Nitrogen-33)))
+   Bond-1 or (Structure and (not (Nitrogen-34)))
+   Bond-1 or (Structure and (not (Nitrogen-35)))
+   Bond-1 or (Structure and (not (Nitrogen-36)))
+   Bond-1 or (Structure and (not (Nitrogen-37)))
+   Bond-1 or (Structure and (not (Nitrogen-38)))
+   Bond-1 or (Structure and (not (Nitrogen-499)))
+   Bond-1 or (Structure and (not (Non_ar_5c_ring)))
+   Bond-1 or (Structure and (not (Non_ar_6c_ring)))
+   Bond-1 or (Structure and (not (Non_ar_hetero_5_ring)))
+   Bond-1 or (Structure and (not (Non_ar_hetero_6_ring)))
+   Bond-1 or (Structure and (not (Oxygen-40)))
+   Bond-1 or (Structure and (not (Oxygen-41)))
+   Bond-1 or (Structure and (not (Oxygen-42)))
+   Bond-1 or (Structure and (not (Oxygen-45)))
+   Bond-1 or (Structure and (not (Oxygen-49)))
+   Bond-1 or (Structure and (not (Oxygen-50)))
+   Bond-1 or (Structure and (not (Oxygen-51)))
+   Bond-1 or (Structure and (not (Oxygen-52)))
+   Bond-1 or (Structure and (not (Oxygen-53)))
+   Bond-1 or (Structure and (not (Phenol)))
+   Bond-1 or (Structure and (not (Phosphorus-60)))
+   Bond-1 or (Structure and (not (Phosphorus-61)))
+   Bond-1 or (Structure and (not (Phosphorus-62)))
+   Bond-1 or (Structure and (not (Ring_size_4)))
+   Bond-1 or (Structure and (not (Selenium-102)))
+   Bond-1 or (Structure and (not (Six_ring)))
+   Bond-1 or (Structure and (not (Sodium-81)))
+   Bond-1 or (Structure and (not (Sulfide)))
+   Bond-1 or (Structure and (not (Sulfo)))
+   Bond-1 or (Structure and (not (Sulfur-70)))
+   Bond-1 or (Structure and (not (Sulfur-72)))
+   Bond-1 or (Structure and (not (Sulfur-74)))
+   Bond-1 or (Structure and (not (Sulfur-75)))
+   Bond-1 or (Structure and (not (Sulfur-76)))
+   Bond-1 or (Structure and (not (Sulfur-77)))
+   Bond-1 or (Structure and (not (Sulfur-78)))
+   Bond-1 or (Structure and (not (Sulfur-79)))
+   Bond-1 or (Structure and (not (Tellurium-129)))
+   Bond-1 or (Structure and (not (Tin-113)))
+   Bond-1 or (Structure and (not (Titanium-134)))
+   Bond-1 or (Structure and (not (Vanadium)))
+   Bond-1 or (Structure and (not (Zinc-87)))
+   Structure or (Bond and Bond-1)
+   Structure or (Bond-1 and (not (Alcohol)))
+   Structure or (Bond-1 and (not (Alkyl_halide)))
+   Structure or (Bond-1 and (not (Amine)))
+   Structure or (Bond-1 and (not (Amino)))
+   Structure or (Bond-1 and (not (Ar_halide)))
+   Structure or (Bond-1 and (not (Arsenic-101)))
+   Structure or (Bond-1 and (not (Barium-115)))
+   Structure or (Bond-1 and (not (Bond-1)))
+   Structure or (Bond-1 and (not (Bond-2)))
+   Structure or (Bond-1 and (not (Bond-3)))
+   Structure or (Bond-1 and (not (Bond-7)))
+   Structure or (Bond-1 and (not (Bromine-94)))
+   Structure or (Bond-1 and (not (Calcium-84)))
+   Structure or (Bond-1 and (not (Carbon-10)))
+   Structure or (Bond-1 and (not (Carbon-14)))
+   Structure or (Bond-1 and (not (Carbon-15)))
+   Structure or (Bond-1 and (not (Carbon-16)))
+   Structure or (Bond-1 and (not (Carbon-17)))
+   Structure or (Bond-1 and (not (Carbon-19)))
+   Structure or (Bond-1 and (not (Carbon-191)))
+   Structure or (Bond-1 and (not (Carbon-192)))
+   Structure or (Bond-1 and (not (Carbon-193)))
+   Structure or (Bond-1 and (not (Carbon-21)))
+   Structure or (Bond-1 and (not (Carbon-22)))
+   Structure or (Bond-1 and (not (Carbon-232)))
+   Structure or (Bond-1 and (not (Carbon-26)))
+   Structure or (Bond-1 and (not (Carbon-27)))
+   Structure or (Bond-1 and (not (Carbon-29)))
+   Structure or (Bond-1 and (not (Chlorine-93)))
+   Structure or (Bond-1 and (not (Compound)))
+   Structure or (Bond-1 and (not (Copper-96)))
+   Structure or (Bond-1 and (not (Cyanate)))
+   Structure or (Bond-1 and (not (Di10)))
+   Structure or (Bond-1 and (not (Di227)))
+   Structure or (Bond-1 and (not (Di23)))
+   Structure or (Bond-1 and (not (Di232)))
+   Structure or (Bond-1 and (not (Di260)))
+   Structure or (Bond-1 and (not (Di281)))
+   Structure or (Bond-1 and (not (Di48)))
+   Structure or (Bond-1 and (not (Di51)))
+   Structure or (Bond-1 and (not (Di64)))
+   Structure or (Bond-1 and (not (Di66)))
+   Structure or (Bond-1 and (not (Di67a)))
+   Structure or (Bond-1 and (not (Di8)))
+   Structure or (Bond-1 and (not (Ester)))
+   Structure or (Bond-1 and (not (Ether)))
+   Structure or (Bond-1 and (not (Ethoxy)))
+   Structure or (Bond-1 and (not (Five_ring)))
+   Structure or (Bond-1 and (not (Fluorine-92)))
+   Structure or (Bond-1 and (not (Gallium)))
+   Structure or (Bond-1 and (not (Halide10)))
+   Structure or (Bond-1 and (not (Hydrogen-1)))
+   Structure or (Bond-1 and (not (Hydrogen-2)))
+   Structure or (Bond-1 and (not (Hydrogen-3)))
+   Structure or (Bond-1 and (not (Hydrogen-8)))
+   Structure or (Bond-1 and (not (Imine)))
+   Structure or (Bond-1 and (not (Iodine-95)))
+   Structure or (Bond-1 and (not (Ketone)))
+   Structure or (Bond-1 and (not (Krypton-83)))
+   Structure or (Bond-1 and (not (Lead-121)))
+   Structure or (Bond-1 and (not (Manganese-85)))
+   Structure or (Bond-1 and (not (Mercury-120)))
+   Structure or (Bond-1 and (not (Methanol)))
+   Structure or (Bond-1 and (not (Methoxy)))
+   Structure or (Bond-1 and (not (Methyl)))
+   Structure or (Bond-1 and (not (Molybdenum)))
+   Structure or (Bond-1 and (not (Nitro)))
+   Structure or (Bond-1 and (not (Nitrogen-31)))
+   Structure or (Bond-1 and (not (Nitrogen-32)))
+   Structure or (Bond-1 and (not (Nitrogen-33)))
+   Structure or (Bond-1 and (not (Nitrogen-34)))
+   Structure or (Bond-1 and (not (Nitrogen-35)))
+   Structure or (Bond-1 and (not (Nitrogen-36)))
+   Structure or (Bond-1 and (not (Nitrogen-37)))
+   Structure or (Bond-1 and (not (Nitrogen-38)))
+   Structure or (Bond-1 and (not (Nitrogen-499)))
+   Structure or (Bond-1 and (not (Non_ar_5c_ring)))
+   Structure or (Bond-1 and (not (Non_ar_6c_ring)))
+   Structure or (Bond-1 and (not (Non_ar_hetero_5_ring)))
+   Structure or (Bond-1 and (not (Non_ar_hetero_6_ring)))
+   Structure or (Bond-1 and (not (Oxygen-40)))
+   Structure or (Bond-1 and (not (Oxygen-41)))
+   Structure or (Bond-1 and (not (Oxygen-42)))
+   Structure or (Bond-1 and (not (Oxygen-45)))
+   Structure or (Bond-1 and (not (Oxygen-49)))
+   Structure or (Bond-1 and (not (Oxygen-50)))
+   Structure or (Bond-1 and (not (Oxygen-51)))
+   Structure or (Bond-1 and (not (Oxygen-52)))
+   Structure or (Bond-1 and (not (Oxygen-53)))
+   Structure or (Bond-1 and (not (Phenol)))
+   Structure or (Bond-1 and (not (Phosphorus-60)))
+   Structure or (Bond-1 and (not (Phosphorus-61)))
+   Structure or (Bond-1 and (not (Phosphorus-62)))
+   Structure or (Bond-1 and (not (Ring_size_4)))
+   Structure or (Bond-1 and (not (Selenium-102)))
+   Structure or (Bond-1 and (not (Six_ring)))
+   Structure or (Bond-1 and (not (Sodium-81)))
+   Structure or (Bond-1 and (not (Sulfide)))
+   Structure or (Bond-1 and (not (Sulfo)))
+   Structure or (Bond-1 and (not (Sulfur-70)))
+   Structure or (Bond-1 and (not (Sulfur-72)))
+   Structure or (Bond-1 and (not (Sulfur-74)))
+   Structure or (Bond-1 and (not (Sulfur-75)))
+   Structure or (Bond-1 and (not (Sulfur-76)))
+   Structure or (Bond-1 and (not (Sulfur-77)))
+   Structure or (Bond-1 and (not (Sulfur-78)))
+   Structure or (Bond-1 and (not (Sulfur-79)))
+   Structure or (Bond-1 and (not (Tellurium-129)))
+   Structure or (Bond-1 and (not (Tin-113)))
+   Structure or (Bond-1 and (not (Titanium-134)))
+   Structure or (Bond-1 and (not (Vanadium)))
+   Structure or (Bond-1 and (not (Zinc-87)))
+⊤ [acc:21.53%, he:4, c:117, ref:164][score: -0.0010795973483918898]
+|--> ¬Alcohol [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Alkyl_halide [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Amine [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Amino [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Ar_halide [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Arsenic-101 [acc:21.54%, he:3, c:1, ref:1][score: 0.015265999088071264]
+  |--> ¬Arsenic [acc:21.54%, he:3, c:0, ref:1][score: 0.015255476833502857]
+|--> ¬Barium-115 [acc:21.54%, he:3, c:1, ref:1][score: 0.015265999088071264]
+  |--> ¬Barium [acc:21.54%, he:3, c:0, ref:1][score: 0.015255476833502857]
+|--> ¬Bond-1 [acc:39.48%, he:5, c:0, ref:5][score: 0.048182964469853706]
+|--> ¬Bond-2 [acc:22.43%, he:3, c:0, ref:1][score: 0.026893090386166708]
+|--> ¬Bond-3 [acc:21.55%, he:3, c:0, ref:1][score: 0.01549398127038686]
+|--> ¬Bond-7 [acc:28.60%, he:4, c:0, ref:1][score: 0.0070972221247939]
+|--> ¬Bromine-94 [acc:21.69%, he:3, c:1, ref:1][score: 0.017272242292448493]
+  |--> ¬Bromine [acc:21.69%, he:3, c:0, ref:1][score: 0.016798740836869958]
+|--> ¬Calcium-84 [acc:21.54%, he:3, c:1, ref:1][score: 0.015265999088071264]
+  |--> ¬Calcium [acc:21.54%, he:3, c:0, ref:1][score: 0.015255476833502857]
+|--> ¬Carbon-10 [acc:25.61%, he:3, c:0, ref:1][score: 0.068203461821753]
+|--> ¬Carbon-14 [acc:22.13%, he:3, c:0, ref:1][score: 0.022971796850338445]
+|--> ¬Carbon-15 [acc:21.54%, he:3, c:0, ref:1][score: 0.015265999088071264]
+|--> ¬Carbon-16 [acc:21.94%, he:3, c:0, ref:1][score: 0.020463992844866902]
+|--> ¬Carbon-17 [acc:21.54%, he:3, c:0, ref:1][score: 0.015311595524534361]
+|--> ¬Carbon-19 [acc:21.55%, he:3, c:0, ref:1][score: 0.015448384833923735]
+|--> ¬Carbon-191 [acc:21.61%, he:3, c:0, ref:1][score: 0.016223524253796768]
+|--> ¬Carbon-192 [acc:21.56%, he:3, c:0, ref:1][score: 0.015539577706849956]
+|--> ¬Carbon-193 [acc:21.55%, he:3, c:0, ref:1][score: 0.01549398127038686]
+|--> ¬Carbon-21 [acc:21.66%, he:3, c:0, ref:1][score: 0.016861874364280455]
+|--> ¬Carbon-22 [acc:27.99%, he:3, c:1, ref:1][score: 0.09916344218021116]
+  |--> ¬Carbon [acc:33.71%, he:4, c:0, ref:1][score: 0.054114162954649034]
+|--> ¬Carbon-232 [acc:21.54%, he:3, c:0, ref:1][score: 0.015311595524534361]
+|--> ¬Carbon-26 [acc:21.59%, he:3, c:0, ref:1][score: 0.01594994563501805]
+|--> ¬Carbon-27 [acc:21.72%, he:3, c:0, ref:1][score: 0.017728206657079738]
+|--> ¬Carbon-29 [acc:21.64%, he:3, c:0, ref:1][score: 0.01663389218196486]
+|--> ¬Chlorine-93 [acc:22.52%, he:3, c:1, ref:1][score: 0.02803300129774471]
+  |--> ¬Chlorine [acc:22.52%, he:3, c:0, ref:1][score: 0.025076247764020888]
+|--> ¬Compound [acc:21.55%, he:3, c:0, ref:0][score: 0.015502788397460637]
+|--> ¬Copper-96 [acc:21.54%, he:3, c:1, ref:1][score: 0.015311595524534361]
+  |--> ¬Copper [acc:21.54%, he:3, c:0, ref:1][score: 0.015290551015397547]
+|--> ¬Cyanate [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Di10 [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Di227 [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Di23 [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Di232 [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Di260 [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Di281 [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Di48 [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Di51 [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Di64 [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Di66 [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Di67a [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Di8 [acc:21.53%, he:3, c:1, ref:1][score: 0.01522040265160814]
+  |--> ¬Di [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Ester [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Ether [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Ethoxy [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Five_ring [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Fluorine-92 [acc:21.56%, he:3, c:1, ref:1][score: 0.015539577706849956]
+  |--> ¬Fluorine [acc:21.56%, he:3, c:0, ref:1][score: 0.01546592192487108]
+|--> ¬Gallium [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Halide10 [acc:21.53%, he:3, c:1, ref:1][score: 0.01522040265160814]
+  |--> ¬Halide [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Hydrogen-1 [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Hydrogen-2 [acc:21.54%, he:3, c:0, ref:1][score: 0.015311595524534361]
+|--> ¬Hydrogen-3 [acc:34.27%, he:4, c:1, ref:1][score: 0.08082665988565817]
+  |--> ¬Hydrogen [acc:34.67%, he:4, c:1, ref:1][score: 0.0478078250499807]
+    |--> ¬Atom [acc:52.52%, he:6, c:111, ref:116][score: 0.06710295675353378]
+      |--> (¬Alcohol) ⊓ (¬Atom) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Alkyl_halide) ⊓ (¬Atom) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Amine) ⊓ (¬Atom) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Amino) ⊓ (¬Atom) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Ar_halide) ⊓ (¬Atom) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Arsenic-101) ⊓ (¬Atom) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Arsenic) ⊓ (¬Atom) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Barium-115) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Barium) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Bond-2) [acc:53.41%, he:6, c:0, ref:1][score: 0.036738413244011045]
+      |--> (¬Atom) ⊓ (¬Bond-3) [acc:52.54%, he:6, c:0, ref:1][score: 0.025339304128231255]
+      |--> (¬Atom) ⊓ (¬Bond-7) [acc:59.58%, he:7, c:0, ref:1][score: 0.01694254498263813]
+      |--> (¬Atom) ⊓ (¬Bromine-94) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Bromine) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Calcium-84) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Calcium) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Carbon-10) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Carbon-14) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Carbon-15) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Carbon-16) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Carbon-17) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Carbon-19) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Carbon-191) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Carbon-192) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Carbon-193) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Carbon-21) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Carbon-22) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Carbon-232) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Carbon-26) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Carbon-27) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Carbon-29) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Carbon) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Chlorine-93) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Chlorine) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Compound) [acc:52.53%, he:6, c:0, ref:0][score: 0.025348111255304895]
+      |--> (¬Atom) ⊓ (¬Copper-96) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Copper) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Cyanate) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Di10) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Di227) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Di23) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Di232) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Di260) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Di281) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Di48) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Di51) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Di64) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Di66) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Di67a) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Di8) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Di) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Ester) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Ether) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Ethoxy) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Five_ring) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Fluorine-92) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Fluorine) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Gallium) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Halide10) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Halide) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Hydrogen-1) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Hydrogen-2) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Hydrogen-3) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Hydrogen-8) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Hydrogen) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Imine) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Iodine-95) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Iodine) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Ketone) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Krypton-83) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Krypton) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Lead-121) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Lead) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Manganese-85) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Manganese) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Mercury-120) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Mercury) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Methanol) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Methoxy) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Methyl) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Molybdenum) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Nitro) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Nitrogen-31) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Nitrogen-32) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Nitrogen-33) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Nitrogen-34) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Nitrogen-35) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Nitrogen-36) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Nitrogen-37) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Nitrogen-38) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Nitrogen-499) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Nitrogen) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Non_ar_5c_ring) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Non_ar_6c_ring) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Non_ar_hetero_5_ring) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Non_ar_hetero_6_ring) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Oxygen-40) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Oxygen-41) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Oxygen-42) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Oxygen-45) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Oxygen-49) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Oxygen-50) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Oxygen-51) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Oxygen-52) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Oxygen-53) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Oxygen) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Phenol) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Phosphorus-60) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Phosphorus-61) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Phosphorus-62) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Phosphorus) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Ring_size_4) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Selenium-102) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Selenium) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Six_ring) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Ring) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Sodium-81) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Sodium) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Sulfide) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Sulfo) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Sulfur-70) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Sulfur-72) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Sulfur-74) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Sulfur-75) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Sulfur-76) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Sulfur-77) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Sulfur-78) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Sulfur-79) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Sulfur) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Tellurium-129) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Tellurium) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Tin-113) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Tin) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Titanium-134) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Titanium) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Vanadium) [acc:52.52%, he:6, c:0, ref:1][score: 0.02506572550945251]
+      |--> (¬Atom) ⊓ (¬Zinc-87) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+        |--> (¬Atom) ⊓ (¬Zinc) [acc:52.52%, he:6, c:1, ref:1][score: 0.02506572550945251]
+          |--> (¬Atom) ⊓ (¬Atom) [acc:52.52%, he:6, c:0, ref:0][score: 0.025165725509452508]
+|--> ¬Hydrogen-8 [acc:21.92%, he:3, c:0, ref:1][score: 0.02032720353547753]
+|--> ¬Imine [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Iodine-95 [acc:21.55%, he:3, c:1, ref:1][score: 0.015402788397460638]
+  |--> ¬Iodine [acc:21.55%, he:3, c:0, ref:1][score: 0.015360699379186982]
+|--> ¬Ketone [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Krypton-83 [acc:21.54%, he:3, c:1, ref:1][score: 0.015265999088071264]
+  |--> ¬Krypton [acc:21.54%, he:3, c:0, ref:1][score: 0.015255476833502857]
+|--> ¬Lead-121 [acc:21.54%, he:3, c:1, ref:1][score: 0.015265999088071264]
+  |--> ¬Lead [acc:21.54%, he:3, c:0, ref:1][score: 0.015255476833502857]
+|--> ¬Manganese-85 [acc:21.54%, he:3, c:1, ref:1][score: 0.015265999088071264]
+  |--> ¬Manganese [acc:21.54%, he:3, c:0, ref:1][score: 0.015255476833502857]
+|--> ¬Mercury-120 [acc:21.54%, he:3, c:1, ref:1][score: 0.015265999088071264]
+  |--> ¬Mercury [acc:21.54%, he:3, c:0, ref:1][score: 0.015255476833502857]
+|--> ¬Methanol [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Methoxy [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Methyl [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Molybdenum [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Nitro [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Nitrogen-31 [acc:21.56%, he:3, c:0, ref:1][score: 0.015585174143313108]
+|--> ¬Nitrogen-32 [acc:22.38%, he:3, c:1, ref:1][score: 0.026254740275683076]
+  |--> ¬Nitrogen [acc:22.91%, he:3, c:0, ref:1][score: 0.030639013012521466]
+|--> ¬Nitrogen-33 [acc:21.54%, he:3, c:0, ref:1][score: 0.015311595524534361]
+|--> ¬Nitrogen-34 [acc:21.58%, he:3, c:0, ref:1][score: 0.015904349198554924]
+|--> ¬Nitrogen-35 [acc:21.61%, he:3, c:0, ref:1][score: 0.01626912069025992]
+|--> ¬Nitrogen-36 [acc:21.71%, he:3, c:0, ref:1][score: 0.017591417347690364]
+|--> ¬Nitrogen-37 [acc:21.54%, he:3, c:0, ref:1][score: 0.015357191960997513]
+|--> ¬Nitrogen-38 [acc:21.70%, he:3, c:0, ref:1][score: 0.017409031601837866]
+|--> ¬Nitrogen-499 [acc:21.54%, he:3, c:0, ref:1][score: 0.015265999088071264]
+|--> ¬Non_ar_5c_ring [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Non_ar_6c_ring [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Non_ar_hetero_5_ring [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Non_ar_hetero_6_ring [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Oxygen-40 [acc:22.39%, he:3, c:1, ref:1][score: 0.026437126021535518]
+  |--> ¬Oxygen [acc:24.11%, he:3, c:0, ref:1][score: 0.046099712391708444]
+|--> ¬Oxygen-41 [acc:21.55%, he:3, c:0, ref:1][score: 0.015402788397460638]
+|--> ¬Oxygen-42 [acc:21.57%, he:3, c:0, ref:1][score: 0.01576755988916558]
+|--> ¬Oxygen-45 [acc:22.09%, he:3, c:0, ref:1][score: 0.02247023604924413]
+|--> ¬Oxygen-49 [acc:21.88%, he:3, c:0, ref:1][score: 0.01978004629792009]
+|--> ¬Oxygen-50 [acc:21.99%, he:3, c:0, ref:1][score: 0.02119353582827681]
+|--> ¬Oxygen-51 [acc:21.79%, he:3, c:0, ref:1][score: 0.018594538949878992]
+|--> ¬Oxygen-52 [acc:21.55%, he:3, c:0, ref:1][score: 0.01549398127038686]
+|--> ¬Oxygen-53 [acc:21.54%, he:3, c:0, ref:1][score: 0.015311595524534361]
+|--> ¬Phenol [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Phosphorus-60 [acc:21.55%, he:3, c:0, ref:1][score: 0.01549398127038686]
+|--> ¬Phosphorus-61 [acc:21.56%, he:3, c:0, ref:1][score: 0.015630770579776233]
+|--> ¬Phosphorus-62 [acc:21.56%, he:3, c:1, ref:1][score: 0.015630770579776233]
+  |--> ¬Phosphorus [acc:21.62%, he:3, c:0, ref:1][score: 0.0162200168356073]
+|--> ¬Ring_size_4 [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Selenium-102 [acc:21.54%, he:3, c:1, ref:1][score: 0.015265999088071264]
+  |--> ¬Selenium [acc:21.54%, he:3, c:0, ref:1][score: 0.015255476833502857]
+|--> ¬Six_ring [acc:21.53%, he:3, c:1, ref:1][score: 0.01522040265160814]
+  |--> ¬Ring [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Sodium-81 [acc:21.59%, he:3, c:1, ref:1][score: 0.01594994563501805]
+  |--> ¬Sodium [acc:21.59%, he:3, c:0, ref:1][score: 0.015781589561923454]
+|--> ¬Sulfide [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Sulfo [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Sulfur-70 [acc:21.56%, he:3, c:0, ref:1][score: 0.015630770579776233]
+|--> ¬Sulfur-72 [acc:21.54%, he:3, c:0, ref:1][score: 0.015357191960997513]
+|--> ¬Sulfur-74 [acc:21.62%, he:3, c:0, ref:1][score: 0.01631471712672299]
+|--> ¬Sulfur-75 [acc:21.62%, he:3, c:1, ref:1][score: 0.01631471712672299]
+  |--> ¬Sulfur [acc:21.87%, he:3, c:0, ref:1][score: 0.019345126442425743]
+|--> ¬Sulfur-76 [acc:21.54%, he:3, c:0, ref:1][score: 0.015311595524534361]
+|--> ¬Sulfur-77 [acc:21.57%, he:3, c:0, ref:1][score: 0.015721963452702454]
+|--> ¬Sulfur-78 [acc:21.61%, he:3, c:0, ref:1][score: 0.016223524253796768]
+|--> ¬Sulfur-79 [acc:21.54%, he:3, c:0, ref:1][score: 0.015265999088071264]
+|--> ¬Tellurium-129 [acc:21.54%, he:3, c:1, ref:1][score: 0.015265999088071264]
+  |--> ¬Tellurium [acc:21.54%, he:3, c:0, ref:1][score: 0.015255476833502857]
+|--> ¬Tin-113 [acc:21.54%, he:3, c:1, ref:1][score: 0.015311595524534361]
+  |--> ¬Tin [acc:21.54%, he:3, c:0, ref:1][score: 0.015290551015397547]
+|--> ¬Titanium-134 [acc:21.54%, he:3, c:1, ref:1][score: 0.015311595524534361]
+  |--> ¬Titanium [acc:21.54%, he:3, c:0, ref:1][score: 0.015290551015397547]
+|--> ¬Vanadium [acc:21.53%, he:3, c:0, ref:1][score: 0.01522040265160814]
+|--> ¬Zinc-87 [acc:21.54%, he:3, c:1, ref:1][score: 0.015265999088071264]
+  |--> ¬Zinc [acc:21.54%, he:3, c:0, ref:1][score: 0.015255476833502857]
+|--> Bond ⊔ Structure [acc:52.53%, he:6, c:3, ref:29][score: 0.11540170811265817]
+  |--> Bond-1 ⊔ Structure [acc:60.52%, he:7, c:14, ref:361][score: -0.0069708919364456015]
+    |--> Bond-1 ⊔ (Structure ⊓ Structure) [acc:60.52%, he:6, c:0, ref:19][score: 0.10326993441127987]
+    |--> Structure ⊔ (Bond ⊓ Bond-1) [acc:60.52%, he:6, c:1, ref:23][score: 0.10286993441127987]
+      |--> Structure ⊔ (Bond-1 ⊓ Bond-1) [acc:60.52%, he:6, c:0, ref:19][score: 0.10326993441127987]
+    |--> (Bond-1 ⊔ Structure) ⊓ (¬Alcohol) [acc:60.52%, he:6, c:0, ref:0][score: 0.10516993441127986]
+    |--> (Bond-1 ⊔ Structure) ⊓ (¬Alkyl_halide) [acc:60.52%, he:6, c:0, ref:0][score: 0.10516993441127986]
+    |--> (Bond-1 ⊔ Structure) ⊓ (¬Amine) [acc:60.52%, he:6, c:0, ref:0][score: 0.10516993441127986]
+    |--> (Bond-1 ⊔ Structure) ⊓ (¬Amino) [acc:60.52%, he:6, c:0, ref:0][score: 0.10516993441127986]
+    |--> (Bond-1 ⊔ Structure) ⊓ (¬Ar_halide) [acc:60.52%, he:6, c:0, ref:0][score: 0.10516993441127986]
+    |--> (Bond-1 ⊔ Structure) ⊓ (¬Arsenic-101) [acc:60.52%, he:6, c:0, ref:0][score: 0.10516993441127986]
+    |--> (Bond-1 ⊔ Structure) ⊓ (¬Barium-115) [acc:60.52%, he:6, c:0, ref:0][score: 0.10516993441127986]
+    |--> (Bond-1 ⊔ Structure) ⊓ (¬Bond-2) [acc:60.52%, he:6, c:0, ref:0][score: 0.10516993441127986]
+    |--> (Bond-1 ⊔ Structure) ⊓ (¬Bond-3) [acc:60.52%, he:6, c:0, ref:0][score: 0.10516993441127986]
+    |--> (Bond-1 ⊔ Structure) ⊓ (¬Bond-7) [acc:60.52%, he:6, c:0, ref:0][score: 0.10516993441127986]
+    |--> (Bond-1 ⊔ Structure) ⊓ (¬Bromine-94) [acc:60.52%, he:6, c:0, ref:0][score: 0.10516993441127986]
+    |--> (Bond-1 ⊔ Structure) ⊓ (¬Calcium-84) [acc:60.52%, he:6, c:0, ref:0][score: 0.10516993441127986]
+  |--> Bond ⊔ (Structure ⊓ Structure) [acc:52.53%, he:5, c:0, ref:0][score: 0.12530602223703124]
+  |--> Structure ⊔ (Bond ⊓ Bond) [acc:52.53%, he:5, c:0, ref:0][score: 0.12530602223703124]
+|--> ∀ hasAtom.⊤ [acc:21.53%, he:3, c:0, ref:0][score: 0.01532040265160814]
+|--> ∀ hasBond.⊤ [acc:21.53%, he:3, c:0, ref:0][score: 0.01532040265160814]
+|--> ∀ hasStructure.⊤ [acc:21.53%, he:3, c:0, ref:0][score: 0.01532040265160814]
+|--> ∀ inBond.⊤ [acc:21.53%, he:3, c:0, ref:0][score: 0.01532040265160814]
+

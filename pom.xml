@@ -12,15 +12,43 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
+		<compiler.version>1.8</compiler.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>maven.aksw.internal</id>
+			<url>http://maven.aksw.org/repository/internal/</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
+
+		<!-- <dependency> <artifactId>guava</artifactId> <groupId>com.google.guava</groupId> 
+			<type>jar</type> <version>15.0</version> </dependency> -->
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>30.1.1-jre</version>
+		</dependency>
+
+
+
+
+
+		<dependency>
+			<groupId>org.dllearner</groupId>
+			<artifactId>components-core</artifactId>
+			<version>1.5.0</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>net.sourceforge.owlapi</groupId>
 			<artifactId>owlapi-distribution</artifactId>
-			<version>5.1.0</version>
+			<version>4.1.4</version>
 		</dependency>
 
 		<dependency>
