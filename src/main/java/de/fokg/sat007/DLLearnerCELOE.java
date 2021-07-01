@@ -200,6 +200,7 @@ public class DLLearnerCELOE {
 			alg.setMaxExecutionTimeInSeconds(30); // 30s execution time for each LP
 			alg.setLearningProblem(lp);
 			alg.setReasoner(reasoner);
+			alg.setNoisePercentage(32);
 			alg.init();
 			alg.start();
 
@@ -313,9 +314,9 @@ public class DLLearnerCELOE {
 	 * @throws IOException 
 	 */
 	private static void createOutputFile(HashMap<Integer, SortedSet<OWLIndividual>> results, String fileDetails,ClosedWorldReasoner reasoner) throws IOException {
-		String prefix = "@prefix carcinogenesis : <http://dl-learner.org/carcinogenesis#> .\r\n" + 
-				"@prefix lpres : <https://lpbenchgen.org/resource/> .\r\n" + 
-				"@prefix lpprop : <https://lpbenchgen.org/property/> .\r\n" + 
+		String prefix = "@prefix carcinogenesis: <http://dl-learner.org/carcinogenesis#> .\r\n" + 
+				"@prefix lpres: <https://lpbenchgen.org/resource/> .\r\n" + 
+				"@prefix lpprop: <https://lpbenchgen.org/property/> .\r\n" + 
 				"\r\n";
 		
 		
