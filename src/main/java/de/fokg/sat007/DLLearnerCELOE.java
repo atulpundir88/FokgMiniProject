@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -26,7 +27,6 @@ import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
-import com.github.andrewoma.dexx.collection.HashMap;
 
 import uk.ac.manchester.cs.owl.owlapi.OWLNamedIndividualImpl;
 
@@ -321,7 +321,7 @@ public class DLLearnerCELOE {
 		
 		
 		String lpStatement = "";
-		for(Integer key: results.keys()) {
+		for(Integer key: results.keySet()) {
 			String trueStatement = "lpres:result_1pos lpprop:belongsToLP true ;\r\n" + 
 									"    lpprop:pertainsTo lpres:lp_" + key +" ;\r\n";
 			
@@ -331,7 +331,7 @@ public class DLLearnerCELOE {
 			
 			String positiveElement = "    lpprop:resource";
 			for(OWLIndividual element : positiveExamples) {
-				positiveElement = positiveElement + " " + element.toStringID() + ",";
+				positiveElement = positiveElement + " carcinogenesis:" + element.toString() + ",";
 			}
 			positiveElement = positiveElement.substring(0, positiveElement.length()-1) + ".\r\n" + "\r\n";
 			
@@ -342,9 +342,9 @@ public class DLLearnerCELOE {
 		
 			String negativeElement = "    lpprop:resource";
 			for(OWLIndividual element : allIndividuals) {
-				negativeElement = negativeElement + " " + element.toStringID() + ",";
+				negativeElement = negativeElement + " carcinogenesis:" + element.toString() + ",";
 			}
-			negativeElement = negativeElement.substring(0, positiveElement.length()-1) + ".\r\n" + "\r\n";
+			negativeElement = negativeElement.substring(0, negativeElement.length()-1) + ".\r\n" + "\r\n";
 			falseStatement = falseStatement + negativeElement;
 			
 			lpStatement = trueStatement + falseStatement;
@@ -353,7 +353,7 @@ public class DLLearnerCELOE {
 		
 		OntModel ontModel = ModelFactory.createOntologyModel();
 		ontModel.read(new StringReader(prefix + lpStatement), null, "TTL");
-		ontModel.write(new FileWriter(fileDetails));
+		ontModel.write(new FileWriter(fileDetails), "TTL");
 		
 		
 	}
