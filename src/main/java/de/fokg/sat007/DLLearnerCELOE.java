@@ -27,7 +27,6 @@ import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
-
 import uk.ac.manchester.cs.owl.owlapi.OWLNamedIndividualImpl;
 
 /**
@@ -38,6 +37,8 @@ import uk.ac.manchester.cs.owl.owlapi.OWLNamedIndividualImpl;
  *
  */
 public class DLLearnerCELOE {
+
+	static HashMap<String, Integer> countPositive = new HashMap<>();
 
 	static String uriPrefix = "http://dl-learner.org/carcinogenesis#";
 
@@ -51,39 +52,37 @@ public class DLLearnerCELOE {
 	static int totalLPsTrain; // Total number of LPs for train
 	static int startLPGrade; // First LP number for grade
 	static int totalLPsGrade; // Total number of LPs for grade
-	
+
 	static boolean executeTrain; // Should be if need to execute algorithm for train data
-	
+
 	/**
 	 * This method gets parameters from config file
-	 * @throws IOException 
+	 * 
+	 * @throws IOException
 	 */
 	public static void initializeParameters() throws IOException {
-		Configuration config=new Configuration();
-		
+		Configuration config = new Configuration();
+
 		gradingFilePath = config.getPropertyValue("fokg.grade.filepath");
 		trainFilePath = config.getPropertyValue("fokg.train.filepath");
 		trainOutputFile = config.getPropertyValue("fokg.train.output.filedetail");
 		gradeOutputFile = config.getPropertyValue("fokg.grade.output.filedetail");
-		
+
 		startLPTrain = Integer.parseInt(config.getPropertyValue("fokg.train.startlpnumber"));
 		totalLPsTrain = Integer.parseInt(config.getPropertyValue("fokg.train.totallps"));
 		executeTrain = Boolean.parseBoolean(config.getPropertyValue("fokg.train.execute"));
-		
+
 		startLPGrade = Integer.parseInt(config.getPropertyValue("fokg.grade.startlpnumber"));
 		totalLPsGrade = Integer.parseInt(config.getPropertyValue("fokg.grade.totallps"));
-		
-		
-		
+
 	}
 
 	public static void main(String[] args) throws ComponentInitException, OWLOntologyCreationException, IOException {
 
-		
 		long start = System.currentTimeMillis(); // Initialize start time.
 
 		initializeParameters();
-		
+
 		// Load carcinogenesis.owl file
 		OWLFile ks = new OWLFile();
 		ks.setFileName("carcinogenesis.owl");
@@ -105,14 +104,16 @@ public class DLLearnerCELOE {
 		PosOnlyLP lp = new PosOnlyLP(reasoner);
 
 		// Invoke Algorithm for train data
-		
+
 		if (executeTrain) {
-			HashMap<Integer, SortedSet<OWLIndividual>> trainResults = invokeAlgo(trainFilePath, startLPTrain, totalLPsTrain, alg, lp, reasoner, true);
+			HashMap<Integer, SortedSet<OWLIndividual>> trainResults = invokeAlgo(trainFilePath, startLPTrain,
+					totalLPsTrain, alg, lp, reasoner, true);
 			createOutputFile(trainResults, trainOutputFile, reasoner);
 		}
 
 		// Invoke Algorithm for test data
-		HashMap<Integer, SortedSet<OWLIndividual>> gradeResults = invokeAlgo(gradingFilePath, startLPGrade, totalLPsGrade, alg, lp, reasoner, false);
+		HashMap<Integer, SortedSet<OWLIndividual>> gradeResults = invokeAlgo(gradingFilePath, startLPGrade,
+				totalLPsGrade, alg, lp, reasoner, false);
 		createOutputFile(gradeResults, gradeOutputFile, reasoner);
 
 		long end = System.currentTimeMillis();
@@ -138,8 +139,9 @@ public class DLLearnerCELOE {
 	 *            - boolean should be true for train file else false.
 	 * @throws ComponentInitException
 	 */
-	private static HashMap<Integer, SortedSet<OWLIndividual>> invokeAlgo(String filePath, int startLP, int totalNumberOfLP, CELOE alg, PosOnlyLP lp,
-			ClosedWorldReasoner reasoner, boolean trainMode) throws ComponentInitException {
+	private static HashMap<Integer, SortedSet<OWLIndividual>> invokeAlgo(String filePath, int startLP,
+			int totalNumberOfLP, CELOE alg, PosOnlyLP lp, ClosedWorldReasoner reasoner, boolean trainMode)
+			throws ComponentInitException {
 		Scanner sc = null; // Initialize scanner to read data from file
 		List<Double> listF1Score = new ArrayList<Double>();
 		HashMap<Integer, SortedSet<OWLIndividual>> results = new HashMap<>();
@@ -188,12 +190,12 @@ public class DLLearnerCELOE {
 			sc.close();
 
 			// Set learning problem
-			if(trainMode) {
+			if (trainMode) {
 				lp.setPositiveExamples(posExampleRemovedElement);
-			}else {
+			} else {
 				lp.setPositiveExamples(posExample);
 			}
-				
+
 			lp.init();
 
 			// Set CELOE algorithm parameters
@@ -208,7 +210,7 @@ public class DLLearnerCELOE {
 			OWLClassExpression currentlyBestDescription = alg.getCurrentlyBestDescription();
 			SortedSet<OWLIndividual> positiveClassified = reasoner.getIndividuals(currentlyBestDescription);
 			results.put(lp_no, positiveClassified);
-			
+
 			Set<OWLClassExpression> temp = new HashSet<>();
 			temp.add(currentlyBestDescription);
 
@@ -236,17 +238,24 @@ public class DLLearnerCELOE {
 		for (Double f1Score : listF1Score) {
 			System.out.println(f1Score);
 		}
-		
+
 		return results;
 
 	}
 
-	/** This method returns F1-Score.
-	 * @param posExample - positive examples for given LP.
-	 * @param negExample - negative examples for given LP.
-	 * @param currentlyBestDescription - Best class expression for given LP.
-	 * @param reasoner - Reasoner object
-	 * @param display - boolean should be true if all values needs to be displayed.
+	/**
+	 * This method returns F1-Score.
+	 * 
+	 * @param posExample
+	 *            - positive examples for given LP.
+	 * @param negExample
+	 *            - negative examples for given LP.
+	 * @param currentlyBestDescription
+	 *            - Best class expression for given LP.
+	 * @param reasoner
+	 *            - Reasoner object
+	 * @param display
+	 *            - boolean should be true if all values needs to be displayed.
 	 * @return
 	 */
 	private static double validateExamples(HashSet<OWLIndividual> posExample, HashSet<OWLIndividual> negExample,
@@ -306,56 +315,61 @@ public class DLLearnerCELOE {
 		f1Score = (double) (2 * tp) / (2 * tp + fp + fn);
 		return f1Score;
 	}
-	
-	/** This method creates output file for all LPs
-	 * @param results - map containing positive examples for lp.
-	 * @param fileDetails - output file details.
-	 * @param reasoner - reasoner object.
-	 * @throws IOException 
+
+	/**
+	 * This method creates output file for all LPs
+	 * 
+	 * @param results
+	 *            - map containing positive examples for lp.
+	 * @param fileDetails
+	 *            - output file details.
+	 * @param reasoner
+	 *            - reasoner object.
+	 * @throws IOException
 	 */
-	private static void createOutputFile(HashMap<Integer, SortedSet<OWLIndividual>> results, String fileDetails,ClosedWorldReasoner reasoner) throws IOException {
-		String prefix = "@prefix carcinogenesis: <http://dl-learner.org/carcinogenesis#> .\r\n" + 
-				"@prefix lpres: <https://lpbenchgen.org/resource/> .\r\n" + 
-				"@prefix lpprop: <https://lpbenchgen.org/property/> .\r\n" + 
-				"\r\n";
-		
-		
+	private static void createOutputFile(HashMap<Integer, SortedSet<OWLIndividual>> results, String fileDetails,
+			ClosedWorldReasoner reasoner) throws IOException {
+		String prefix = "@prefix carcinogenesis: <http://dl-learner.org/carcinogenesis#> .\r\n"
+				+ "@prefix lpres: <https://lpbenchgen.org/resource/> .\r\n"
+				+ "@prefix lpprop: <https://lpbenchgen.org/property/> .\r\n" + "\r\n";
+
 		String lpStatement = "";
-		for(Integer key: results.keySet()) {
-			String trueStatement = "lpres:result_1pos lpprop:belongsToLP true ;\r\n" + 
-									"    lpprop:pertainsTo lpres:lp_" + key +" ;\r\n";
-			
+		int resultIndex = 1;
+		for (Integer key : results.keySet()) {
+			String trueStatement = "lpres:result_" + resultIndex + "pos lpprop:belongsToLP true ;\r\n" + "    lpprop:pertainsTo lpres:lp_"
+					+ key + " ;\r\n";
+
 			SortedSet<OWLIndividual> positiveExamples = results.get(key);
 			SortedSet<OWLIndividual> allIndividuals = reasoner.getIndividuals();
 			allIndividuals.removeAll(positiveExamples);
-			
+
 			String positiveElement = "    lpprop:resource";
-			for(OWLIndividual element : positiveExamples) {
+			for (OWLIndividual element : positiveExamples) {
 				positiveElement = positiveElement + " carcinogenesis:" + element.toString() + ",";
 			}
-			positiveElement = positiveElement.substring(0, positiveElement.length()-1) + ".\r\n" + "\r\n";
-			
+			positiveElement = positiveElement.substring(0, positiveElement.length() - 1) + ".\r\n" + "\r\n";
+
 			trueStatement = trueStatement + positiveElement;
-			
-			String falseStatement = "lpres:result_1neg lpprop:belongsToLP false ;\r\n" + 
-					"    lpprop:pertainsTo lpres:lp_" + key +" ;\r\n";
-		
+
+			String falseStatement = "lpres:result_" + resultIndex + "neg lpprop:belongsToLP false ;\r\n"
+					+ "    lpprop:pertainsTo lpres:lp_" + key + " ;\r\n";
+
 			String negativeElement = "    lpprop:resource";
-			for(OWLIndividual element : allIndividuals) {
+			for (OWLIndividual element : allIndividuals) {
 				negativeElement = negativeElement + " carcinogenesis:" + element.toString() + ",";
 			}
-			negativeElement = negativeElement.substring(0, negativeElement.length()-1) + ".\r\n" + "\r\n";
+			negativeElement = negativeElement.substring(0, negativeElement.length() - 1) + ".\r\n" + "\r\n";
 			falseStatement = falseStatement + negativeElement;
-			
-			lpStatement = trueStatement + falseStatement;
-			
+
+			lpStatement = lpStatement + trueStatement + falseStatement;
+			resultIndex++;
+
 		}
-		
+
 		OntModel ontModel = ModelFactory.createOntologyModel();
 		ontModel.read(new StringReader(prefix + lpStatement), null, "TTL");
 		ontModel.write(new FileWriter(fileDetails), "TTL");
-		
-		
+
 	}
 
 }
