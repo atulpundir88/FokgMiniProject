@@ -121,26 +121,7 @@ public class DLLearnerCELOE {
 	private static HashMap<Integer, SortedSet<OWLIndividual>> invokeAlgo(String filePath, int startLP,
 			int totalNumberOfLP, boolean trainMode) throws ComponentInitException {
 
-		// Load carcinogenesis.owl file
-		OWLFile ks = new OWLFile();
-		ks.setFileName("carcinogenesis.owl");
-		ks.init();
-
-		// Initialize Reasoner
-		ClosedWorldReasoner reasoner = new ClosedWorldReasoner();
-
-		// Initialize knowledge sources
-		Set<KnowledgeSource> sources = new HashSet<>();
-		sources.add(ks);
-		reasoner.setSources(sources);
-		reasoner.init();
-
-		// Initialize CELOE object
-		CELOE alg = new CELOE();
-
-		// Initialize PosOnlyLP object
-		PosOnlyLP lp = new PosOnlyLP(reasoner);
-
+		
 		Scanner sc = null; // Initialize scanner to read data from file
 		List<Double> listF1Score = new ArrayList<Double>();
 		HashMap<Integer, SortedSet<OWLIndividual>> results = new HashMap<>();
@@ -187,6 +168,27 @@ public class DLLearnerCELOE {
 				throw new RuntimeException("Not able to read the file");
 			}
 			sc.close();
+			
+			// Load carcinogenesis.owl file
+			OWLFile ks = new OWLFile();
+			ks.setFileName("carcinogenesis.owl");
+			ks.init();
+
+			// Initialize Reasoner
+			ClosedWorldReasoner reasoner = new ClosedWorldReasoner();
+
+			// Initialize knowledge sources
+			Set<KnowledgeSource> sources = new HashSet<>();
+			sources.add(ks);
+			reasoner.setSources(sources);
+			reasoner.init();
+
+			// Initialize CELOE object
+			CELOE alg = new CELOE();
+
+			// Initialize PosOnlyLP object
+			PosOnlyLP lp = new PosOnlyLP(reasoner);
+
 
 			// Set learning problem
 			if (trainMode) {
