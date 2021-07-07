@@ -83,38 +83,17 @@ public class DLLearnerCELOE {
 
 		initializeParameters();
 
-		// Load carcinogenesis.owl file
-		OWLFile ks = new OWLFile();
-		ks.setFileName("carcinogenesis.owl");
-		ks.init();
-
-		// Initialize Reasoner
-		ClosedWorldReasoner reasoner = new ClosedWorldReasoner();
-
-		// Initialize knowledge sources
-		Set<KnowledgeSource> sources = new HashSet<>();
-		sources.add(ks);
-		reasoner.setSources(sources);
-		reasoner.init();
-
-		// Initialize CELOE object
-		CELOE alg = new CELOE();
-
-		// Initialize PosOnlyLP object
-		PosOnlyLP lp = new PosOnlyLP(reasoner);
-
 		// Invoke Algorithm for train data
-
 		if (executeTrain) {
 			HashMap<Integer, SortedSet<OWLIndividual>> trainResults = invokeAlgo(trainFilePath, startLPTrain,
-					totalLPsTrain, alg, lp, reasoner, true);
-			createOutputFile(trainResults, trainOutputFile, reasoner);
+					totalLPsTrain, true);
+			createOutputFile(trainResults, trainOutputFile);
 		}
 
 		// Invoke Algorithm for test data
 		HashMap<Integer, SortedSet<OWLIndividual>> gradeResults = invokeAlgo(gradingFilePath, startLPGrade,
-				totalLPsGrade, alg, lp, reasoner, false);
-		createOutputFile(gradeResults, gradeOutputFile, reasoner);
+				totalLPsGrade, false);
+		createOutputFile(gradeResults, gradeOutputFile);
 
 		long end = System.currentTimeMillis();
 		System.out.println("Total time : " + (end - start));
@@ -140,8 +119,28 @@ public class DLLearnerCELOE {
 	 * @throws ComponentInitException
 	 */
 	private static HashMap<Integer, SortedSet<OWLIndividual>> invokeAlgo(String filePath, int startLP,
-			int totalNumberOfLP, CELOE alg, PosOnlyLP lp, ClosedWorldReasoner reasoner, boolean trainMode)
-			throws ComponentInitException {
+			int totalNumberOfLP, boolean trainMode) throws ComponentInitException {
+
+		// Load carcinogenesis.owl file
+		OWLFile ks = new OWLFile();
+		ks.setFileName("carcinogenesis.owl");
+		ks.init();
+
+		// Initialize Reasoner
+		ClosedWorldReasoner reasoner = new ClosedWorldReasoner();
+
+		// Initialize knowledge sources
+		Set<KnowledgeSource> sources = new HashSet<>();
+		sources.add(ks);
+		reasoner.setSources(sources);
+		reasoner.init();
+
+		// Initialize CELOE object
+		CELOE alg = new CELOE();
+
+		// Initialize PosOnlyLP object
+		PosOnlyLP lp = new PosOnlyLP(reasoner);
+
 		Scanner sc = null; // Initialize scanner to read data from file
 		List<Double> listF1Score = new ArrayList<Double>();
 		HashMap<Integer, SortedSet<OWLIndividual>> results = new HashMap<>();
@@ -326,9 +325,24 @@ public class DLLearnerCELOE {
 	 * @param reasoner
 	 *            - reasoner object.
 	 * @throws IOException
+	 * @throws ComponentInitException 
 	 */
-	private static void createOutputFile(HashMap<Integer, SortedSet<OWLIndividual>> results, String fileDetails,
-			ClosedWorldReasoner reasoner) throws IOException {
+	private static void createOutputFile(HashMap<Integer, SortedSet<OWLIndividual>> results, String fileDetails) throws IOException, ComponentInitException {
+
+		// Load carcinogenesis.owl file
+		OWLFile ks = new OWLFile();
+		ks.setFileName("carcinogenesis.owl");
+		ks.init();
+
+		// Initialize Reasoner
+		ClosedWorldReasoner reasoner = new ClosedWorldReasoner();
+
+		// Initialize knowledge sources
+		Set<KnowledgeSource> sources = new HashSet<>();
+		sources.add(ks);
+		reasoner.setSources(sources);
+		reasoner.init();
+
 		String prefix = "@prefix carcinogenesis: <http://dl-learner.org/carcinogenesis#> .\r\n"
 				+ "@prefix lpres: <https://lpbenchgen.org/resource/> .\r\n"
 				+ "@prefix lpprop: <https://lpbenchgen.org/property/> .\r\n" + "\r\n";
@@ -336,8 +350,8 @@ public class DLLearnerCELOE {
 		String lpStatement = "";
 		int resultIndex = 1;
 		for (Integer key : results.keySet()) {
-			String trueStatement = "lpres:result_" + resultIndex + "pos lpprop:belongsToLP true ;\r\n" + "    lpprop:pertainsTo lpres:lp_"
-					+ key + " ;\r\n";
+			String trueStatement = "lpres:result_" + resultIndex + "pos lpprop:belongsToLP true ;\r\n"
+					+ "    lpprop:pertainsTo lpres:lp_" + key + " ;\r\n";
 
 			SortedSet<OWLIndividual> positiveExamples = results.get(key);
 			SortedSet<OWLIndividual> allIndividuals = reasoner.getIndividuals();
