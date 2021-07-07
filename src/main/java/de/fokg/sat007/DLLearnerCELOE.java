@@ -201,7 +201,6 @@ public class DLLearnerCELOE {
 			alg.setMaxExecutionTimeInSeconds(30); // 30s execution time for each LP
 			alg.setLearningProblem(lp);
 			alg.setReasoner(reasoner);
-			alg.setNoisePercentage(32);
 			alg.init();
 			alg.start();
 
