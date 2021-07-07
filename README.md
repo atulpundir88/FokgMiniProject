@@ -1,14 +1,14 @@
 # Classifying data using CELOE Algorithm (DLLearner)
 
 # Description
-This project uses CELOE algorithm which generates the class expressions and these expressions are used for classifying. We provide positive examples to CELOE algorithm for each and CELOE computes the class expressions based on the input positive samples. This class expression is used to get Individuals from Carcinogenesis.owl file and the positive & negative individuals are classified. Our Project executes in two phases. In first phase, we get the positive and negative individuals from input files for both training and grading. And these individuals are stored in separate files. Then, in second phase, these files are used as inputs to 
+Our project uses the CELOE algorithm which generates the class expressions and these expressions are used for classifying individuals based on the knowledge base. From each learning problem, we provide positive individuals to the algorithm, and it sees what it fits for the class expressions. Since the reasoner is based on a closed world assumption, the negative examples need not be specified explicitly. The Project is executed to generate positive and negative individuals for both training and grading data, which are then stored in different files. Further, these stored files are given as input and the class expression then generated classifies individuals accordingly. Finally, we store these results in an output file.
 
 
-# The project consists of following steps:
-Step 1: Read data from TTL file and generate lp files for positive and negative examples using class : ReadTTLDataUsingOWLAPI
-1. Parses training file & grading file.
-2. Gets include and exclude resources for each learning problem.
-3. Stores this resources in directory lpfiles/train/<learning_problem>_<positive_negative>.txt(for train data) or lpfiles/grade/<learning_problem>_<positive_negative>.txt(for grading data)
+# Process
+Step 1 - **Getting data from given TTL file and generate lp files for positive and negative examples** using class : **ReadTTLDataUsingOWLAPI**
+1. Parsing the given training & grading files.
+2. Getting  individuals using includesResource and excludesResource properties from each learning problem.
+3. Stores this individuals in directory lpfiles/train/<learning_problem>_<positive_negative>.txt(for train data) and lpfiles/grade/<learning_problem>_<positive_negative>.txt(for grading data).
 
 Step 2: Classify data using CELOE and generate output file using class : DLLearnerCELOE
 1. Initializes CELOE algorithm.
