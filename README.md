@@ -1,4 +1,8 @@
-# Classifying data using CELOE
+# Classifying data using CELOE Algorithm (DLLearner)
+
+# Description
+This project uses CELOE algorithm which generates the class expressions and these expressions are used for classifying. We provide positive examples to CELOE algorithm for each and CELOE computes the class expressions based on the input positive samples. This class expression is used to get Individuals from Carcinogenesis.owl file and the positive & negative individuals are classified. Our Project executes in two phases. In first phase, we get the positive and negative individuals from input files for both training and grading. And these individuals are stored in separate files. Then, in second phase, these files are used as inputs to 
+
 
 # The project consists of following steps:
 Step 1: Read data from TTL file and generate lp files for positive and negative examples using class : ReadTTLDataUsingOWLAPI
