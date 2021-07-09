@@ -43,4 +43,5 @@ Step 1: Configuring parameters in the config.properties file. 
 
 Step 2: Execute ReadTTLDataUsingOWLAPI.java class. This class will generate the LP files for training data under lpfiles/train path and for grading data under lpfiles/grade path (The lpfiles are already existing in the project directory).
 
-Step 3: Execute DLLearnerCELOE.java class. This class will invoke the CELOE algorithm for each lp of training (if fokg.train.execute flag is true) and grading data. After the execution is completed, an output file will be created under the output directory.
+Step 3: Execute DLLearnerCELOE.java class. This class will invoke the CELOE algorithm for each lp of training (if fokg.train.execute flag is true) and grading data. After the execution is completed, an output file will be created under the output directory. 
+The project execution takes around 22 minutes for grading data (For each LP around 1 minute).
