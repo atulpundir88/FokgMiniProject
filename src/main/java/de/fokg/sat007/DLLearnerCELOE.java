@@ -123,7 +123,6 @@ public class DLLearnerCELOE {
 
 		
 		Scanner sc = null; // Initialize scanner to read data from file
-		List<Double> listF1Score = new ArrayList<Double>();
 		HashMap<Integer, SortedSet<OWLIndividual>> results = new HashMap<>();
 
 		int lp_no = startLP;
@@ -211,110 +210,16 @@ public class DLLearnerCELOE {
 			SortedSet<OWLIndividual> positiveClassified = reasoner.getIndividuals(currentlyBestDescription);
 			results.put(lp_no, positiveClassified);
 
-			Set<OWLClassExpression> temp = new HashSet<>();
-			temp.add(currentlyBestDescription);
-
-			// Store F1Score
-			double f1Score = validateExamples(posExample, negExample, temp, reasoner, true);
-			System.out.println("F1-Score : " + f1Score);
-			listF1Score.add(f1Score);
-
-			Set<OWLIndividual> individuals = new HashSet<>();
-			for (OWLClassExpression classExpression : temp) {
-				SortedSet<OWLIndividual> individuals2 = reasoner.getIndividuals(classExpression);
-				individuals.addAll(individuals2);
-				System.out.println("LP : " + lp_no);
-				System.out.println("Number of Positives : " + individuals2.size());
-				System.out.println("Positive Individual(Given in LP) : " + posExample);
-				System.out.println("Postivie Individual(Classified by Algo) : " + individuals2);
-			}
-
 			lp_no++;
 			System.out.println("--------------END----------------");
 
-		}
-
-		System.out.println("F1-Scores : ");
-		for (Double f1Score : listF1Score) {
-			System.out.println(f1Score);
 		}
 
 		return results;
 
 	}
 
-	/**
-	 * This method returns F1-Score.
-	 * 
-	 * @param posExample
-	 *            - positive examples for given LP.
-	 * @param negExample
-	 *            - negative examples for given LP.
-	 * @param currentlyBestDescription
-	 *            - Best class expression for given LP.
-	 * @param reasoner
-	 *            - Reasoner object
-	 * @param display
-	 *            - boolean should be true if all values needs to be displayed.
-	 * @return
-	 */
-	private static double validateExamples(HashSet<OWLIndividual> posExample, HashSet<OWLIndividual> negExample,
-			Set<OWLClassExpression> currentlyBestDescription, ClosedWorldReasoner reasoner, boolean display) {
-
-		Set<OWLIndividual> individuals = new HashSet<>();
-		for (OWLClassExpression classExpression : currentlyBestDescription) {
-			// SortedSet<OWLIndividual> individuals =
-			// reasoner.getIndividuals(currentlyBestDescription);
-			individuals.addAll(reasoner.getIndividuals(classExpression));
-		}
-
-		Iterator<OWLIndividual> iterator = posExample.iterator();
-		int pos_count = 0;
-		int pos_count_neg = 0;
-		while (iterator.hasNext()) {
-			OWLIndividual next = iterator.next();
-			if (individuals.contains(next)) {
-				pos_count++;
-			} else {
-				pos_count_neg++;
-			}
-		}
-
-		// System.out.println("POsitive Samples : " + posExample);
-		if (display) {
-			System.out.println("POsitive Count : " + pos_count);
-			System.out.println("POsitive Count (classified as negative) : " + pos_count_neg);
-			System.out.println("Number of positive samples : " + posExample.size());
-		}
-
-		iterator = negExample.iterator();
-		int neg_count = 0;
-		int neg_count_pos = 0;
-		while (iterator.hasNext()) {
-			OWLIndividual next = iterator.next();
-			if (!individuals.contains(next)) {
-				neg_count++;
-			} else {
-				neg_count_pos++;
-			}
-		}
-
-		// System.out.println("Negative Samples : " + negExample);
-		if (display) {
-			System.out.println("Negative Count : " + neg_count);
-			System.out.println("Negative Count (classified as positive) : " + neg_count_pos);
-			System.out.println("Number of negative samples : " + negExample.size());
-		}
-
-		return getF1Score(pos_count, neg_count, pos_count_neg, neg_count_pos);
-
-	}
-
-	private static double getF1Score(int tp, int tn, int fp, int fn) {
-		double f1Score = 0.0;
-		f1Score = (double) (2 * tp) / (2 * tp + fp + fn);
-		return f1Score;
-	}
+	
 
 	/**
 	 * This method creates output file for all LPs
